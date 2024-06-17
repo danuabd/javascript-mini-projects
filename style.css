@@ -70,6 +70,12 @@ body {
   gap: 4px;
 }
 
+.logo__text a:link,
+.logo__text a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
 h1 {
   font-size: 3.2rem;
   font-weight: 700;

@@ -173,7 +173,8 @@ btnChangeClr.addEventListener("click", function () {
     return;
   }
 
-  document.body.style.backgroundColor = colors[colorIndex];
+  document.querySelector(".color-flipper").style.backgroundColor =
+    colors[colorIndex];
 
   colorName.textContent = colors[colorIndex];
 });
