@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        height: 100dvh;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+      }
+      button {
+        font-size: 16px;
+        border: 2px solid #222;
+        border-radius: 8px;
+        padding: 6px 24px;
+        cursor: pointer;
+        transition: all 200ms;
+      }
+
+      button:hover {
+        color: #fff;
+      }
+
+      button:active {
+        transform: scale(0.9);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+      }
+
+      .counter {
+        font-size: 128px;
+        font-weight: 600;
+      }
+
+      .counter__control-btns {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .btn--decrease:hover {
+        background-color: orangered;
+        border-color: orangered;
+      }
+
+      .btn--reset:hover {
+        background-color: #000;
+        border-color: #000;
+      }
+
+      .btn--increase:hover {
+        background-color: green;
+        border-color: green;
+      }
+    </style>
+    <script defer src="script.js"></script>
+    <title>Counter</title>
+  </head>
+  <body>
+    <main>
+      <div class="counter">0</div>
+      <div class="counter__control-btns">
+        <button class="btn--decrease">Decrease</button>
+        <button class="btn--reset">Reset</button>
+        <button class="btn--increase">Increase</button>
+      </div>
+    </main>
+  </body>
+</html>
