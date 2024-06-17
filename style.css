@@ -10,6 +10,10 @@ html {
   font-size: 10px;
 }
 
+img {
+  display: inline-block;
+}
+
 /* GENERAL COMPONENTS */
 
 body {
@@ -35,6 +39,10 @@ body {
   color: #111827;
   line-height: 1.5;
   margin-bottom: 2rem;
+}
+
+.shadow-m {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 /* HEADER */
@@ -74,6 +82,39 @@ h1 {
 }
 
 /* MAIN */
+
+/* SECTION -- Project Description */
+
+.section--project-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9.6rem;
+}
+
+.pd-text-container {
+  max-width: 50%;
+}
+
+.pd__heading {
+  text-transform: capitalize;
+  line-height: 1.1;
+}
+
+.pd__image-container {
+  max-height: 300px;
+}
+
+.pd__image {
+  width: auto;
+  height: 300px;
+  border-radius: 4px;
+  transition: filter 200ms;
+}
+
+.lazy-load {
+  filter: blur(5px);
+}
 
 /* FOOTER */
 .footer {
