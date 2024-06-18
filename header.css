@@ -1,31 +1,12 @@
 /* HEADER */
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 10px;
-}
-
-img {
-  display: inline-block;
-}
-
-/* GENERAL COMPONENTS */
-
-body {
-  font-family: "Inter", sans-serif;
-}
-
 .header {
+  font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   background-color: whitesmoke;
   box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.3);
-  padding: 2.8rem 0;
+  padding: 2.8rem 1.6rem;
 }
 
 .header__logo {
@@ -33,6 +14,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2.4rem;
+}
+
+.logo__img {
+  max-width: clamp(5rem, 7.682vw, 6rem);
+  height: "auto";
 }
 
 .logo__text {
@@ -50,12 +36,12 @@ body {
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: clamp(1.8rem, 4.167vw, 3.2rem);
   font-weight: 700;
 }
 
 .logo__text p {
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 2.083vw, 1.7rem);
   max-width: 36ch;
   color: #4b5563;
 }
@@ -70,4 +56,12 @@ h1 {
 
 .shadow-m {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 321px) {
+  .header {
+    padding: 2rem 1.6rem;
+  }
 }
