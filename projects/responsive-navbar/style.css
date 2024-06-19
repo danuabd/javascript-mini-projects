@@ -48,7 +48,7 @@ body {
 
 .navbar {
   height: 70px;
-  background-color: #222;
+  background-color: #111;
   overflow: hidden;
   transition: all 250ms ease-in;
   padding: 2rem 3.2rem;
@@ -60,7 +60,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  background-color: #222;
+  background-color: #111;
 }
 
 .navbar__bottom {
