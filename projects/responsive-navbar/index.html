@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../../img/site-icon--small.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../header.css" />
+    <link rel="stylesheet" href="../../footer.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Responsive Navbar</title>
+  </head>
+  <body>
+    <header class="header section-margin">
+      <div class="header__logo">
+        <a href="../../index.html"
+          ><img
+            src="../../img/site-icon--large.png"
+            alt="Logo"
+            width="60px"
+            height="60px"
+            class="logo__img"
+        /></a>
+
+        <div class="logo__text">
+          <h1><a href="../../index.html">Mini JavaScript Projects</a></h1>
+          <p>
+            A collection of small JS layouts and patterns inspired by
+            freecodecamp.org
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="navbar">
+        <div class="navbar__top">
+          <h2 class="h2">Responsive Navbar</h2>
+          <button class="btn btn--toggle-navbar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="navbar__icon icon--open"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="navbar__icon icon--close hidden"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="navbar__bottom">
+          <nav class="bottom__menu">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Project 1</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__box--1">
+        <p>Hosted on</p>
+        <img
+          src="../../img/github-icon.png"
+          alt="github-icon"
+          width="50px"
+          height="50px"
+        />
+      </div>
+      <div class="footer__box--2">
+        <p>Built by Danuka Prasad</p>
+        <img
+          src="../../img/site-icon--large.png"
+          alt="site-logo"
+          width="50px"
+          height="50px"
+        />
+      </div>
+    </footer>
+  </body>
+</html>

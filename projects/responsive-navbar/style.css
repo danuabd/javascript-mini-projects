@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "inter", sans-serif;
+}
+
+/* General Elements */
+
+.section-margin {
+  margin-bottom: 6.4rem;
+}
+
+.section-padding {
+  padding: 0 3.2rem;
+}
+
+.block-margin {
+  margin-bottom: 4.4rem;
+}
+
+.h2 {
+  font-size: clamp(2rem, 3.385vw, 2.8rem);
+}
+
+.p {
+  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
+  color: #111827;
+  line-height: 1.5;
+}
+
+.shadow-m {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 70px;
+  background-color: #222;
+  overflow: hidden;
+  transition: all 250ms ease-in;
+  padding: 2rem 3.2rem;
+  margin-bottom: 6.4rem;
+}
+
+.navbar__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #222;
+}
+
+.navbar__bottom {
+  margin-top: 3.2rem;
+  padding: 0 2.4rem;
+}
+
+.bottom__menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+.bottom__menu li {
+  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
+  line-height: 1.6;
+  color: #fff;
+  cursor: pointer;
+}
+
+.bottom__menu li a:link,
+.bottom__menu li a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.bottom__menu li a:hover {
+  text-decoration: underline;
+}
+
+.btn--toggle-navbar {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar__icon {
+  width: 28px;
+  height: 28px;
+  stroke: #fff;
+}
+
+.navbar-bottom--open {
+  height: 260px;
+}
