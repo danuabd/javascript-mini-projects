@@ -1,6 +1,6 @@
 "use strict";
 
-const pdImage = document.querySelector(".pd__image");
+const pdImage = document.querySelector(".author__image");
 
 const pdImageOriginal = document.createElement("img");
 
