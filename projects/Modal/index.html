@@ -3,14 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../../img/site-icon--small.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../header.css" />
+    <link rel="stylesheet" href="../../footer.css" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>Modal</title>
   </head>
   <body>
-    <main>
-      <h1>Modal Window</h1>
-      <p>
+    <header class="header section-margin">
+      <div class="header__logo">
+        <a href="../../index.html"
+          ><img
+            src="../../img/site-icon--large.png"
+            alt="Logo"
+            width="60px"
+            height="60px"
+            class="logo__img"
+        /></a>
+
+        <div class="logo__text">
+          <h1><a href="../../index.html">Mini JavaScript Projects</a></h1>
+          <p>
+            A collection of small JS layouts and patterns inspired by
+            freecodecamp.org
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="section-margin section-padding">
+      <h2 class="h2">Modal Window</h2>
+      <p class="p block-margin">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab eos
         voluptas quia fugiat totam iure soluta vel, atque culpa esse ipsa
         ratione ad voluptatem! Eaque commodi laudantium blanditiis voluptatem
@@ -19,10 +52,30 @@
       <button class="btn btn--open-modal">Open Modal</button>
     </main>
     <div class="modal hidden">
-      <h2>This is a modal</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <h2 class="h2 block-margin">This is a modal</h2>
+      <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       <button class="btn btn--close-modal">Close modal</button>
     </div>
     <div class="overlay hidden"></div>
+    <footer class="footer">
+      <div class="footer__box--1">
+        <p>Hosted on</p>
+        <img
+          src="../../img/github-icon.png"
+          alt="github-icon"
+          width="50px"
+          height="50px"
+        />
+      </div>
+      <div class="footer__box--2">
+        <p>Built by Danuka Prasad</p>
+        <img
+          src="../../img/site-icon--large.png"
+          alt="site-logo"
+          width="50px"
+          height="50px"
+        />
+      </div>
+    </footer>
   </body>
 </html>
