@@ -1,6 +1,6 @@
 "use strict";
 
-const header = document.querySelector("header");
+const header = document.querySelector(".sidebar__header");
 const sidebar = document.querySelector(".sidebar");
 const sidebarToggle = document.querySelector(".btn--open-sidebar");
 

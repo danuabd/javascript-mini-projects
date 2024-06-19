@@ -12,11 +12,45 @@ body {
   font-family: "inter", sans-serif;
 }
 
-header {
+.section-margin {
+  margin-bottom: 6.4rem;
+}
+
+.section-padding {
+  padding: 0 3.2rem;
+}
+
+.block-margin {
+  margin-bottom: 4.4rem;
+}
+
+.h2 {
+  font-size: clamp(2rem, 3.385vw, 2.8rem);
+  color: #0f172a;
+}
+
+.p {
+  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
+  color: #111827;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.shadow-m {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.section--side-bar {
+  min-height: 100vh;
+}
+
+.sidebar__header {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #fff;
+  background-color: #222;
   padding: 24px 32px;
 }
 
@@ -24,11 +58,18 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px;
+  width: clamp(18rem, 41.5vw, 25rem);
   height: 100vh;
-  padding: 12px 24px;
-  background-color: skyblue;
+  padding: 24px 24px;
+  color: #000;
+  background-color: #ffea00;
   transition: all 300ms;
+}
+
+.sidebar__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sidebar--close {
@@ -36,19 +77,13 @@ header {
 }
 
 .btn--close-sidebar {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  width: clamp(2rem, 7.467vw, 2.8rem);
+  height: clamp(2rem, 7.467vw, 2.8rem);
+  font-weight: 600;
   color: #fff;
   background: #000;
   border: none;
-  padding: 4px;
   cursor: pointer;
-}
-
-.sidebar h2 {
-  position: relative;
-  margin-bottom: 24px;
 }
 
 .sidebar ul {
@@ -75,6 +110,7 @@ header {
 .menu-icon {
   width: 32px;
   height: 32px;
+  stroke: #fff;
 }
 
 .hidden {
