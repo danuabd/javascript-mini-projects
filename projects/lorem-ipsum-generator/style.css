@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+}
+
+/* GENERAL COMPONENTS */
+.hidden {
+  display: none !important;
+}
+
+.section-margin {
+  margin-bottom: 6.4rem;
+}
+
+.section-padding {
+  padding: 0 3.2rem;
+}
+
+.block-margin {
+  margin-bottom: 4.4rem;
+}
+
+.h2 {
+  text-align: center;
+  font-size: clamp(2rem, 3.385vw, 2.8rem);
+  color: #0f172a;
+}
+
+.p {
+  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
+  color: #111827;
+  line-height: 1.5;
+}
+
+.shadow-m {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* SECTION -- Lorem ipsum generator */
