@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+}
+
+/* GENERAL COMPONENTS */
+.hidden {
+  display: none !important;
+}
+
+.section-margin {
+  margin-bottom: 6.4rem;
+}
+
+.section-padding {
+  padding: 0 3.2rem;
+}
+
+.block-margin {
+  margin-bottom: 4.4rem;
+}
+
+.h2 {
+  text-align: center;
+  font-size: clamp(2rem, 3.385vw, 2.8rem);
+  color: #0f172a;
+}
+
+.p {
+  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
+  color: #111827;
+  line-height: 1.5;
+}
+
+.shadow-m {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* SECTION -- Countdown Clock */
+.section--countdown-clock {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url("img/background-img-scaled-down.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.giveaway-time p {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.countdown-clock__container {
+  position: fixed;
+  width: clamp(300px, 88.778vw, 1200px);
+  max-height: 100vh;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 5.6rem;
+  transform: translate(-50%, -50%);
+}
+
+.countdown-clock__container h2 {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.clock__description {
+  text-align: center;
+}
+
+.countdown-clock {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-clock__box {
+  width: clamp(80px, 15.385vw, 100px);
+  height: clamp(80px, 15.385vw, 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #fff;
+  background-color: #111;
+  border-radius: 2px;
+  padding: 6px;
+}
+
+.countdown-clock__box p {
+  font-size: clamp(2.8rem, 8vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  line-height: 1;
+  color: #fff;
+}
+
+.countdown-clock__box span {
+  font-size: clamp(1rem, 2.154vw, 1.4rem);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media (max-width: 650px) {
+  .countdown-clock__container {
+    padding: 4.4rem 3.2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .countdown-clock__container {
+    padding: 4.4rem 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .countdown-clock {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+}
