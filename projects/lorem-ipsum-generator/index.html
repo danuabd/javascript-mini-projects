@@ -21,7 +21,7 @@
     <title>Lorem Ipsum Generator</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header section-margin">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -41,7 +41,37 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section
+        class="section--lorem-ipsum-generator section-padding block-margin"
+      >
+        <h2 class="h2 block-margin">Tired of Boring Lorem Ipsum?</h2>
+        <form class="generator__form section-margin">
+          <label for="paragraph-count">Paragraphs:</label>
+          <input
+            type="number"
+            name="Paragraph count input"
+            value="1"
+            min="1"
+            max="15"
+            id="paragraph-count"
+          />
+          <button class="btn btn--generate shadow-m">Generate</button>
+        </form>
+        <h2 class="h2 block-margin-s">Generated Text</h2>
+        <button class="btn btn--copy shadow-m block-margin">
+          Copy Generated Text
+        </button>
+        <div class="generator__output">
+          <p class="output__text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
+            repellendus ipsa voluptates aspernatur dolorum consequatur,
+            explicabo aperiam vero natus ad nulla numquam nobis inventore
+            quibusdam architecto distinctio consequuntur fugit commodi.
+          </p>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <div class="footer__box--1">
         <p>Hosted on</p>
