@@ -17,6 +17,8 @@ const btnClearAll = document.querySelector(".btn--clear-all");
 const errorPopup = document.querySelector(".popup--error");
 const confirmPopup = document.querySelector(".popup--confirm");
 const itemUpdatePopup = document.querySelector(".popup--form");
+
+// hold popups
 const popups = {
   error: errorPopup,
   confirm: confirmPopup,
@@ -304,7 +306,7 @@ btnClearAll.addEventListener("click", function () {
   setConfirm("Do you want to clear all grocery items from the list?");
 });
 
-// event handler for grocery lits
+// event handler for grocery list
 groceryList.addEventListener("click", function (e) {
   if (!e.target.closest(".btn")) return;
 
