@@ -52,7 +52,6 @@
               name="grocery item"
               id="item-input"
               class="text-input"
-              size="50"
               placeholder="eg: eggs"
             />
             <button class="btn btn--add-item">Submit</button>
@@ -138,29 +137,40 @@
           </div>
         </div>
         <div class="popup popup--confirm shadow-m hidden">
-          <p class="p popup__content">Are you sure?</p>
+          <p class="p popup__content confirm-msg">Are you sure?</p>
           <div class="popup__btns">
             <button class="btn popup__btn btn--confirm">Yes</button>
             <button class="btn popup__btn btn--cancel">Cancel</button>
           </div>
         </div>
-        <div class="popup popup--form shadow-m">
+        <div class="popup popup--form shadow-m hidden" data-active="0">
           <p class="p">
-            Update Grocery <span class="grocery-item__name">(Item)</span>
+            Update Item (<span class="grocery-item__name">Item</span>)
           </p>
           <form>
             <input
               type="text"
               name="update grocery item"
-              id="update-item"
+              id="update-input"
               class="text-input"
               placeholder="eg:bread"
               size="30"
             />
+            <div class="popup__btns">
+              <button class="btn popup__btn btn--update" type="submit">
+                Update
+              </button>
+              <button class="btn popup__btn btn--cancel">Cancel</button>
+            </div>
           </form>
+        </div>
+        <div class="popup popup--error shadow-m hidden">
+          <div class="popup__content popup__content--err">
+            <p>Warning</p>
+            <p class="error-msg">Error</p>
+          </div>
           <div class="popup__btns">
-            <button class="btn popup__btn btn--update">Update</button>
-            <button class="btn popup__btn btn--cancel">Cancel</button>
+            <button class="btn popup__btn btn--cancel">OK</button>
           </div>
         </div>
       </section>

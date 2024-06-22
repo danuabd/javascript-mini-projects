@@ -61,6 +61,10 @@ body {
 
 /* SECTION--Grocery list maker */
 
+.section-grocery-list-maker {
+  min-height: 100vh;
+}
+
 .grocery-list-maker {
   display: flex;
   flex-direction: column;
@@ -74,6 +78,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.6rem;
+  margin-bottom: 4.4rem;
 }
 
 .text-input {
@@ -82,6 +87,10 @@ body {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-inline: 1.2rem;
+}
+
+#item-input {
+  width: clamp(200px, 31.746vw, 300px);
 }
 
 .btn--add-item,
@@ -110,7 +119,7 @@ body {
 }
 
 .grocery-list {
-  width: 500px;
+  width: clamp(200px, 79.365vw, 500px);
 }
 
 .grocery-item {
@@ -181,9 +190,29 @@ body {
   height: 150px;
 }
 
+.popup__content--err {
+  text-align: center;
+}
+
+.popup__content--err p:first-child {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.popup--error {
+  width: 300px;
+}
+
+.error-msg {
+  font-size: 1.4rem;
+  color: #ff0000;
+}
+
 .popup__btns {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -201,6 +230,17 @@ body {
 .btn--cancel:hover {
   color: #fff;
   background-color: #000;
+}
+
+.btn--update:hover,
+.btn--update:active {
+  color: #fff;
+  background-color: #008000;
+}
+
+#update-input {
+  width: clamp(200px, 31.746vw, 300px);
+  margin-bottom: 2.8rem;
 }
 
 /* Overlay */
