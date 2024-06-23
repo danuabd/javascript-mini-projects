@@ -10,13 +10,9 @@
 }
 
 .p {
-  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
+  font-size: 1.6rem;
   color: var(--clr-dark);
   line-height: 1.5;
-}
-
-.shadow-m {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 /* SECTION -- Lorem ipsum generator */

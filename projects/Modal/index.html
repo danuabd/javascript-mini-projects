@@ -14,14 +14,16 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../header.css" />
-    <link rel="stylesheet" href="../../footer.css" />
+    <link rel="stylesheet" href="../../css/global-reset.css" />
+    <link rel="stylesheet" href="../../css/utility-classes.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>Modal</title>
   </head>
   <body>
-    <header class="header section-margin">
+    <header class="header margin-l">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -41,18 +43,22 @@
         </div>
       </div>
     </header>
-    <main class="section-margin section-padding">
-      <h2 class="h2">Modal Window</h2>
-      <p class="p block-margin">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab eos
-        voluptas quia fugiat totam iure soluta vel, atque culpa esse ipsa
-        ratione ad voluptatem! Eaque commodi laudantium blanditiis voluptatem
-        rerum?
-      </p>
-      <button class="btn btn--open-modal">Open Modal</button>
+    <main>
+      <section
+        class="section--modal-window padding-l container-800 container-centered"
+      >
+        <h2 class="h2 margin-s">Modal Window</h2>
+        <p class="p margin-m text-centered">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab eos
+          voluptas quia fugiat totam iure soluta vel, atque culpa esse ipsa
+          ratione ad voluptatem! Eaque commodi laudantium blanditiis voluptatem
+          rerum?
+        </p>
+        <button class="btn btn--open-modal">Open Modal</button>
+      </section>
     </main>
     <div class="modal hidden">
-      <h2 class="h2 block-margin">This is a modal</h2>
+      <h2 class="h2 h2-modal margin-m">This is a modal</h2>
       <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       <button class="btn btn--close-modal">Close modal</button>
     </div>

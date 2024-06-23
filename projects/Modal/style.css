@@ -1,15 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
 body {
-  font-family: "Inter", sans-serif;
   position: relative;
 }
 
@@ -20,24 +9,19 @@ main {
 .h2 {
   text-align: center;
   font-size: clamp(2rem, 3.385vw, 3rem);
-  color: #0f172a;
-  margin-bottom: 3.2rem;
+  color: var(--clr-dark);
+}
+
+.h2-modal {
+  text-align: center;
+  font-size: clamp(2rem, 3.385vw, 2.4rem);
+  color: var(--clr-dark);
 }
 
 .p {
-  font-size: clamp(1.5rem, 2.07vw, 2rem);
-  color: #111827;
+  font-size: clamp(1.5rem, 2.07vw, 1.8rem);
+  color: var(--clr-dark);
   line-height: 1.5;
-  margin-bottom: 2rem;
-  margin: 0 auto;
-}
-
-.shadow-m {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-
-.block-margin {
-  margin-bottom: 4.4rem;
 }
 
 /* MODAL */
@@ -45,12 +29,12 @@ main {
 .btn {
   display: block;
   font-size: clamp(1.5rem, 2.07vw, 2rem);
-  background: #fff;
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 6px 24px;
+  color: var(--clr-light);
+  background: var(--clr-dark);
+  border-radius: var(--border-radius-l);
+  box-shadow: var(--shadow-300);
+  padding: 1.2rem 2.4rem;
   margin: 0 auto;
-  cursor: pointer;
   transition: all 250ms;
 }
 
@@ -59,14 +43,11 @@ main {
 }
 
 .btn--open-modal:hover {
-  color: #fff;
-  background: #000;
+  background: var(--clr-green);
 }
 
 .btn--close-modal:hover {
-  color: #fff;
-  border-color: red;
-  background: red;
+  background: var(--clr-red);
 }
 
 /* Modal */
@@ -77,9 +58,9 @@ main {
   right: 50%;
   width: clamp(28rem, 92.361vw, 40rem);
   background-color: #fff;
-  padding: 32px;
+  padding: 3.2rem;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-400);
   transform: translate(50%, -50%);
   z-index: 999;
 }
@@ -87,7 +68,7 @@ main {
 .modal h2,
 .modal p {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 }
 
 .overlay {
