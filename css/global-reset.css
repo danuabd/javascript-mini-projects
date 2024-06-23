@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img,
+picture {
+  display: block;
+}
+
+/* GENERAL COMPONENTS */
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: unset;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

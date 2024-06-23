@@ -1,56 +1,3 @@
-/* GLOBAL RESET */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-img {
-  display: inline-block;
-}
-
-/* GENERAL COMPONENTS */
-
-body {
-  font-family: "Inter", sans-serif;
-}
-
-.section-margin {
-  margin-bottom: 6.4rem;
-}
-
-.section-padding {
-  padding: 0 3.2rem;
-}
-
-.block-margin {
-  margin-bottom: 4.4rem;
-}
-
-.h2 {
-  font-size: clamp(2rem, 3.385vw, 2.8rem);
-  color: #0f172a;
-  margin-bottom: 3.2rem;
-}
-
-.p {
-  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
-  color: #111827;
-  line-height: 1.5;
-  margin-bottom: 2rem;
-}
-
-.shadow-m {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-
-/* MAIN */
-
 /* SECTION -- About author */
 
 .section--about-author {
@@ -76,7 +23,7 @@ body {
 .author__image {
   width: 100%;
   height: 100%;
-  border-radius: 4px;
+  border-radius: var(--border-radius-s);
   transition: filter 200ms;
 }
 
@@ -88,12 +35,12 @@ body {
 
 @media (max-width: 664px) {
   .header {
-    margin-bottom: 4.4rem;
+    margin-bottom: var(--space-900);
   }
 
   .section--about-author {
     flex-direction: column;
-    gap: 3.2rem;
+    gap: var(--space-750);
   }
 
   .about-author {
@@ -106,7 +53,7 @@ body {
 
   .aa__heading {
     text-align: center;
-    margin-bottom: 2.8rem;
+    margin-bottom: var(--space-700);
   }
 }
 
@@ -135,22 +82,22 @@ body {
 .mini-projects__heading {
   text-align: center;
   letter-spacing: 1px;
-  color: #fff;
-  background-color: #000;
-  padding: 1.6rem 0;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  padding: var(--space-500) 0;
 }
 
 .mini-projects__heading .mini-project-count {
-  color: #ffea00;
+  color: var(--clr-yellow);
 }
 
 .mini-projects__list ul {
   display: grid;
-  grid-template-columns: max-content max-content max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content;
   justify-content: center;
   align-items: center;
-  column-gap: 6.4rem;
-  row-gap: 4.4rem;
+  column-gap: var(--space-2xl);
+  row-gap: var(--space-900);
   list-style-position: inside;
   margin: 0 auto;
 }
@@ -160,7 +107,6 @@ body {
   font-size: clamp(1.6rem, 0.233vw, 1.8rem);
   cursor: pointer;
   padding: 8px 16px;
-  /* border: 2px solid black; */
   z-index: 1;
 }
 
@@ -180,7 +126,7 @@ body {
 }
 
 .mini-project:hover::after {
-  background-color: #ffea00;
+  background-color: var(--clr-yellow);
   transform: skew(-20deg);
 }
 
@@ -190,32 +136,36 @@ body {
 
 .mini-project a:link,
 .mini-project a:visited {
-  color: #000;
+  color: var(--clr-dark);
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 924px) {
+@media (max-width: 1350px) {
   .mini-projects__list ul {
-    grid-template-columns: max-content max-content max-content max-content;
-    column-gap: 6.4rem;
+    grid-template-columns: max-content max-content max-content;
+    column-gap: var(--space-900);
   }
 }
 
-@media (max-width: 748px) {
+@media (max-width: 924px) {
+  .mini-projects__list ul {
+    grid-template-columns: max-content max-content max-content;
+  }
+}
+
+@media (max-width: 768px) {
   .mini-projects__list ul {
     max-width: 90%;
-    grid-template-columns: max-content max-content max-content;
+    grid-template-columns: max-content max-content;
     justify-content: space-between;
   }
 }
 
 @media (max-width: 650px) {
   .mini-projects__list ul {
-    grid-template-columns: max-content max-content max-content;
-    justify-content: space-between;
     column-gap: 4.8rem;
-    row-gap: 3.6rem;
+    row-gap: var(--space-800);
   }
 
   .mini-projects__list ul li {
@@ -227,34 +177,28 @@ body {
   .mini-projects__list ul {
     max-width: 100%;
     justify-content: center;
-    column-gap: 4.4rem;
+    column-gap: var(--space-900);
   }
 }
 
 @media (max-width: 545px) {
   .mini-projects__list ul {
-    column-gap: 3.2rem;
-    row-gap: 3.2rem;
+    column-gap: var(--space-700);
+    row-gap: var(--space-700);
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 525px) {
   .mini-projects__list ul {
     max-width: 80%;
-    grid-template-columns: max-content max-content;
+    grid-template-columns: max-content;
     justify-content: space-between;
-    column-gap: 3.2rem;
+    column-gap: var(--space-700);
     margin: 0 auto;
   }
 }
 
 @media (max-width: 426px) {
-  .mini-projects__list ul {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 361px) {
   .mini-projects__list ul {
     max-width: max-content;
     display: flex;
