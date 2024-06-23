@@ -14,14 +14,16 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../header.css" />
-    <link rel="stylesheet" href="../../footer.css" />
+    <link rel="stylesheet" href="../../css/global-reset.css" />
+    <link rel="stylesheet" href="../../css/utility-classes.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>Grocery List Maker</title>
   </head>
   <body>
-    <header class="header section-margin">
+    <header class="header margin-l">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -42,11 +44,11 @@
       </div>
     </header>
     <main>
-      <section
-        class="section--grocery-list-maker section-margin section-padding"
-      >
-        <div class="grocery-list-maker shadow-m">
-          <form class="grocery-form">
+      <section class="section--grocery-list-maker margin-l padding-l">
+        <div
+          class="grocery-list-maker shadow-400 container-600 container-centered border-radius-l"
+        >
+          <form class="grocery-form margin-m">
             <input
               type="text"
               name="grocery item"
@@ -56,7 +58,7 @@
             />
             <button class="btn btn--add-item">Submit</button>
           </form>
-          <div class="grocery-list block-margin">
+          <div class="grocery-list margin-m">
             <div class="grocery-item" id="1">
               <p>Bacon</p>
               <div class="grocery-item__btns">
@@ -136,14 +138,17 @@
             <button class="btn btn--clear-all">Clear Items</button>
           </div>
         </div>
-        <div class="popup popup--confirm shadow-m hidden">
+        <div class="popup popup--confirm shadow-400 border-radius-l hidden">
           <p class="p popup__content confirm-msg">Are you sure?</p>
           <div class="popup__btns">
             <button class="btn popup__btn btn--confirm">Yes</button>
             <button class="btn popup__btn btn--cancel">Cancel</button>
           </div>
         </div>
-        <div class="popup popup--form shadow-m hidden" data-active="0">
+        <div
+          class="popup popup--form shadow-400 border-radius-l hidden"
+          data-active="0"
+        >
           <p class="p">
             Update Item (<span class="grocery-item__name">Item</span>)
           </p>
@@ -164,7 +169,7 @@
             </div>
           </form>
         </div>
-        <div class="popup popup--error shadow-m hidden">
+        <div class="popup popup--error shadow-m border-radius-l hidden">
           <div class="popup__content popup__content--err">
             <p>Warning</p>
             <p class="error-msg">Error</p>

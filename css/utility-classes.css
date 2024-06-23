@@ -2,6 +2,7 @@
   /* COLORS */
   --clr-light: #fafafa;
   --clr-dark: #0a0a0a;
+  --clr-gray: #f3f4f6;
   --clr-yellow: #ffea00;
   --clr-green: #16a34a;
   --clr-red: #dc2626;
@@ -121,4 +122,20 @@
 .p {
   font-size: clamp(var(--fs-base), 2.07vw, var(--space-500));
   line-height: 1.5;
+}
+
+.shadow-100 {
+  box-shadow: var(--shadow-100);
+}
+
+.shadow-200 {
+  box-shadow: var(--shadow-200);
+}
+
+.shadow-300 {
+  box-shadow: var(--shadow-300);
+}
+
+.shadow-400 {
+  box-shadow: var(--shadow-400);
 }

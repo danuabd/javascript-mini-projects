@@ -273,7 +273,6 @@ updateForm.addEventListener("click", function (e) {
 // event handler for clear all button
 btnClearAll.addEventListener("click", function () {
   setConfirmPopupState("all");
-  setUpdateFormState;
   setConfirm("Do you want to clear all grocery items from the list?");
 });
 
