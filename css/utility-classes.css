@@ -120,7 +120,7 @@
 }
 
 .p {
-  font-size: clamp(var(--fs-base), 2.07vw, var(--space-500));
+  font-size: 1.6rem;
   line-height: 1.5;
 }
 
