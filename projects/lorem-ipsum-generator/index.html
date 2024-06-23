@@ -14,14 +14,16 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../header.css" />
-    <link rel="stylesheet" href="../../footer.css" />
+    <link rel="stylesheet" href="../../css/global-reset.css" />
+    <link rel="stylesheet" href="../../css/utility-classes.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>Lorem Ipsum Generator</title>
   </head>
   <body>
-    <header class="header section-margin">
+    <header class="header margin-l">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -42,11 +44,9 @@
       </div>
     </header>
     <main>
-      <section
-        class="section--lorem-ipsum-generator section-padding block-margin"
-      >
-        <h2 class="h2 block-margin">Tired of Boring Lorem Ipsum?</h2>
-        <form class="generator__form section-margin">
+      <section class="section--lorem-ipsum-generator padding-l margin-l">
+        <h2 class="h2 margin-m">Tired of Boring Lorem Ipsum?</h2>
+        <form class="generator__form margin-l">
           <label for="paragraph-count">Paragraphs:</label>
           <input
             type="number"
@@ -56,13 +56,13 @@
             max="15"
             id="paragraph-count"
           />
-          <button class="btn btn--generate shadow-m">Generate</button>
+          <button class="btn btn--generate shadow-400">Generate</button>
         </form>
-        <h2 class="h2 block-margin-s">Generated Text</h2>
-        <button class="btn btn--copy shadow-m block-margin">
+        <h2 class="h2 margin-s">Generated Text</h2>
+        <button class="btn btn--copy shadow-400 margin-m">
           Copy Generated Text
         </button>
-        <div class="generator__output">
+        <div class="generator__output container-800 container-centered">
           <p class="output__text">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
             repellendus ipsa voluptates aspernatur dolorum consequatur,
