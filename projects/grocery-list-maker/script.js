@@ -10,7 +10,7 @@ const overlay = document.querySelector(".overlay");
 const errorMsg = document.querySelector(".error-msg");
 const confirmMsg = document.querySelector(".confirm-msg");
 
-// btns
+// buttons
 const btnClearAll = document.querySelector(".btn--clear-all");
 
 // Popups
@@ -31,9 +31,9 @@ const groceryListArr = [];
 
 // Check for local storage
 function getGroceryList() {
-  const list = JSON.parse(localStorage.getItem("groceryList"));
+  const savedList = JSON.parse(localStorage.getItem("groceryList"));
 
-  list.forEach((item) => groceryListArr.push(item));
+  savedList.forEach((item) => groceryListArr.push(item));
   lastId = groceryListArr.length;
 }
 
@@ -113,6 +113,11 @@ function setConfirm(msg) {
   togglePopup("confirm");
 }
 
+// set update form state
+function setConfirmPopupState(state) {
+  confirmPopup.dataset.type = state;
+}
+
 // toggle popup with overlay
 function togglePopup(name) {
   popups[name].classList.toggle("hidden");
@@ -126,14 +131,14 @@ function toggleClearAllBtn(option = 0) {
   if (!option) btnClearAll.classList.add("hidden");
 }
 
-// Not implemented yet ✅
-function resetUpdateForm() {
-  updateForm.dataset.active = 0;
+// clear given input field
+function clearInputField(el) {
+  el.value = "";
 }
 
 // Clear grocery list
 function clearAll() {
-  groceryListArr.length = 0;
+  groceryListArr.length = 0; // clear the list
   saveGroceryList();
   renderGroceryList();
   togglePopup("confirm");
@@ -182,7 +187,6 @@ function updateItem(el, newName) {
   });
 
   saveGroceryList();
-  console.log(groceryListArr);
 }
 
 // delete grocery item from the list
@@ -199,9 +203,11 @@ groceryForm.addEventListener("click", function (e) {
 
   if (!e.target.closest(".btn")) return;
 
+  itemInput.blur();
+
   if (checkInput(itemInput.value)) addItem(itemInput.value);
 
-  itemInput.value = "";
+  clearInputField(itemInput);
 });
 
 // event handler of error popup
@@ -231,7 +237,7 @@ confirmPopup.addEventListener("click", function (e) {
   }
 
   //   reset confirm popup data type
-  confirmPopup.dataset.type = "none";
+  setConfirmPopupState("one");
   togglePopup("confirm");
 });
 
@@ -246,8 +252,10 @@ updateForm.addEventListener("click", function (e) {
 
   if (!e.target.closest(".btn")) return;
 
+  inputUpdate.blur();
+
   if (e.target.closest(".btn--cancel")) {
-    inputUpdate.value = "";
+    clearInputField(inputUpdate);
     updateForm.dataset.active = 0;
     togglePopup("form");
   }
@@ -255,7 +263,7 @@ updateForm.addEventListener("click", function (e) {
   if (e.target.closest(".btn--update")) {
     if (checkInput(inputUpdate.value)) {
       updateItem(clickedItem, inputUpdate.value);
-      inputUpdate.value = "";
+      clearInputField(inputUpdate);
       updateForm.dataset.active = 0;
       togglePopup("form");
     }
@@ -264,7 +272,8 @@ updateForm.addEventListener("click", function (e) {
 
 // event handler for clear all button
 btnClearAll.addEventListener("click", function () {
-  confirmPopup.dataset.type = "all";
+  setConfirmPopupState("all");
+  setUpdateFormState;
   setConfirm("Do you want to clear all grocery items from the list?");
 });
 
@@ -281,7 +290,7 @@ groceryList.addEventListener("click", function (e) {
   }
 
   if (e.target.closest(".btn--delete")) {
-    confirmPopup.dataset.type = "one";
+    setConfirmPopupState("one");
     setConfirm("Do you want to delete this item?");
   }
 });
