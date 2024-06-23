@@ -1,6 +1,7 @@
 "use strict";
 
 const colorName = document.querySelector(".bg-color-name");
+const nameColor = document.querySelector(".name__color");
 const btnChangeClr = document.querySelector(".change-color");
 
 const colors = [
@@ -175,6 +176,8 @@ btnChangeClr.addEventListener("click", function () {
 
   document.querySelector(".color-flipper").style.backgroundColor =
     colors[colorIndex];
+
+  nameColor.style.color = colors[colorIndex];
 
   colorName.textContent = colors[colorIndex];
 });

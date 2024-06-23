@@ -4,8 +4,8 @@
   font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
-  background-color: whitesmoke;
-  box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.3);
+  background-color: var(--clr-light);
+  box-shadow: var(--shadow-300);
   padding: 2.8rem 1.6rem;
 }
 
@@ -44,18 +44,6 @@ h1 {
   font-size: clamp(1.4rem, 2.083vw, 1.7rem);
   max-width: 36ch;
   color: #4b5563;
-}
-
-.section-margin {
-  margin-bottom: 6.4rem;
-}
-
-.section-padding {
-  padding: 0 3.2rem;
-}
-
-.shadow-m {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 /* RESPONSIVE */

@@ -3,8 +3,8 @@
   --clr-light: #fafafa;
   --clr-dark: #0a0a0a;
   --clr-yellow: #ffea00;
-  --clr-green-600: #16a34a;
-  --clr-red-600: #dc2626;
+  --clr-green: #16a34a;
+  --clr-red: #dc2626;
 
   /* FONT SIZE */
   --fs-small: 1.333rem;
@@ -92,6 +92,22 @@
 .padding-l {
   padding-left: var(--space-700);
   padding-right: var(--space-700);
+}
+
+.border-radius-xs {
+  border-radius: var(--border-radius-xs);
+}
+
+.border-radius-s {
+  border-radius: var(--border-radius-s);
+}
+
+.border-radius-m {
+  border-radius: var(--border-radius-m);
+}
+
+.border-radius-l {
+  border-radius: var(--border-radius-l);
 }
 
 .h2 {
