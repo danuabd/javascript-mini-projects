@@ -23,7 +23,7 @@
     <title>Responsive Navbar</title>
   </head>
   <body>
-    <header class="header section-margin">
+    <header class="header margin-l">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -44,48 +44,50 @@
       </div>
     </header>
     <main>
-      <div class="navbar">
-        <div class="navbar__top">
-          <h2 class="h2">Responsive Navbar</h2>
-          <button class="btn btn--toggle-navbar">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="navbar__icon icon--open"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="navbar__icon icon--close hidden"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
-              />
-            </svg>
-          </button>
+      <section class="section--responsive-navbar padding-l">
+        <div class="navbar container-1200 container-centered shadow-300">
+          <div class="navbar__top">
+            <h2 class="h2">Responsive Navbar</h2>
+            <button class="btn btn--toggle-navbar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="navbar__icon icon--open"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="navbar__icon icon--close hidden"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="navbar__bottom">
+            <nav class="bottom__menu">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Project 1</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
-        <div class="navbar__bottom">
-          <nav class="bottom__menu">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Project 1</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__box--1">

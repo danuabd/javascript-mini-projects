@@ -1,43 +1,16 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "inter", sans-serif;
+main {
+  min-height: 100vh;
 }
 
 /* General Elements */
-
-.section-margin {
-  margin-bottom: 6.4rem;
-}
-
-.section-padding {
-  padding: 0 3.2rem;
-}
-
-.block-margin {
-  margin-bottom: 4.4rem;
-}
-
 .h2 {
   font-size: clamp(2rem, 3.385vw, 2.8rem);
 }
 
 .p {
-  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
-  color: #111827;
-  line-height: 1.5;
-}
-
-.shadow-m {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  font-size: 1.6rem;
+  color: var(--clr-dark);
+  line-height: 1.6;
 }
 
 .hidden {
@@ -47,8 +20,8 @@ body {
 /* NAVBAR */
 
 .navbar {
-  height: 70px;
-  background-color: #111;
+  height: 7rem;
+  background-color: var(--clr-dark);
   overflow: hidden;
   transition: all 250ms ease-in;
   padding: 2rem 3.2rem;
@@ -59,8 +32,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
-  background-color: #111;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
 }
 
 .navbar__bottom {
@@ -78,14 +51,14 @@ body {
 .bottom__menu li {
   font-size: clamp(1.5rem, 2.07vw, 1.6rem);
   line-height: 1.6;
-  color: #fff;
+  color: var(--clr-light);
   cursor: pointer;
 }
 
 .bottom__menu li a:link,
 .bottom__menu li a:visited {
   text-decoration: none;
-  color: #fff;
+  color: var(--clr-light);
 }
 
 .bottom__menu li a:hover {
@@ -99,11 +72,11 @@ body {
 }
 
 .navbar__icon {
-  width: 28px;
-  height: 28px;
-  stroke: #fff;
+  width: 2.8rem;
+  height: 2.8rem;
+  stroke: var(--clr-light);
 }
 
 .navbar-bottom--open {
-  height: 260px;
+  height: 26rem;
 }
