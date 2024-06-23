@@ -1,15 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "Inter", sans-serif;
+main {
+  min-height: 100vh;
 }
 
 /* GENERAL COMPONENTS */
@@ -17,33 +7,17 @@ body {
   display: none !important;
 }
 
-.section-margin {
-  margin-bottom: 6.4rem;
-}
-
-.section-padding {
-  padding: 0 3.2rem;
-}
-
-.block-margin {
-  margin-bottom: 5.6rem;
-}
-
 .h2 {
   text-align: center;
   font-size: clamp(2rem, 3.385vw, 2.8rem);
-  color: #0f172a;
+  color: var(--clr-dark);
   margin-bottom: 1.2rem;
 }
 
 .p {
-  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
-  color: #111827;
-  line-height: 1.5;
-}
-
-.shadow-m {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  font-size: 1.6rem;
+  color: var(--clr-dark);
+  line-height: 1.6;
 }
 
 /* SECTION - Tabbed Component */
@@ -52,24 +26,24 @@ body {
 }
 
 .tabbed-component {
-  min-height: 400px;
+  min-height: 40rem;
   display: grid;
-  grid-template-columns: clamp(320px, 45vw, 540px) 1fr;
+  grid-template-columns: clamp(32rem, 45vw, 36rem) 1fr;
   align-items: start;
   gap: 3.2rem;
   margin: 0 auto;
 }
 
 .component__image-section {
-  max-width: 540px;
-  height: auto;
+  max-width: 36rem;
+  max-height: 24rem;
+  object-fit: cover;
 }
 
 .tab__image {
   width: 100%;
-  height: auto;
+  height: 24rem;
   object-fit: cover;
-  border-radius: 8px;
   filter: blur(6px);
 }
 
@@ -78,8 +52,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: lightcyan;
-  border-radius: 4px;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
 }
 
 .tabs {
@@ -88,13 +62,12 @@ body {
 }
 
 .tab {
-  font-size: clamp(1.5rem, 2.083vw, 1.7rem);
-  color: #fff;
-  background: #111;
+  font-size: 1.6rem;
+  color: var(--clr-light);
+  background: var(--clr-dark);
   border: 2px solid transparent;
   padding: clamp(8px, 1.302vw, 1.2rem) 0;
   transition: all 100ms ease-in;
-  cursor: pointer;
 }
 
 .tab:first-child {
@@ -106,30 +79,30 @@ body {
 }
 
 .tab:hover {
-  border-left: 2px solid #fff;
-  border-right: 2px solid #fff;
-  color: #fff;
-  background: #444;
+  border-left: 2px solid var(--clr-light);
+  border-right: 2px solid var(--clr-light);
+  color: var(--clr-light);
+  background: var(--clr-red);
 }
 
 .tab:hover:first-child {
   border-left: 2px solid transparent;
-  border-right: 2px solid #fff;
+  border-right: 2px solid var(--clr-light);
 }
 
 .tab:hover:last-child {
-  border-left: 2px solid #fff;
+  border-left: 2px solid var(--clr-light);
   border-right: 2px solid transparent;
 }
 
 .tab:active {
-  color: #fff;
-  background: #777;
+  color: var(--clr-light);
+  background: var(--clr-red);
 }
 
 .tab--active {
-  color: #fff;
-  background: #444;
+  color: var(--clr-light);
+  background: var(--clr-red);
 }
 
 .tab__content {
@@ -151,7 +124,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.4rem;
+    gap: 4.4rem;
   }
 
   .component__image-section {
