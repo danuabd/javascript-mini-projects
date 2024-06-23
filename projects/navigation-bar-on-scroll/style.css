@@ -1,38 +1,12 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "inter", sans-serif;
-}
-
 /* General Elements */
-
-.section-margin {
-  margin-bottom: 6.4rem;
-}
-
-.section-padding {
-  padding: 0 3.2rem;
-}
-
-.block-margin {
-  margin-bottom: 4.4rem;
-}
 
 .h2 {
   font-size: clamp(2rem, 3.385vw, 2.8rem);
 }
 
 .p {
-  font-size: clamp(1.5rem, 2.07vw, 1.6rem);
-  color: #111827;
+  font-size: 1.6rem;
+  color: var(--clr-dark);
   line-height: 1.6;
 }
 
@@ -40,25 +14,21 @@ body {
   margin-bottom: 1.8rem;
 }
 
-.shadow-m {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-
 /* SECTION - Navigation Bar on Scroll */
 .section--navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
-  background-color: #111;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
   transition: opacity 250ms ease-in;
   padding: 2rem 3.2rem;
 }
 
 .navbar__icon {
-  width: 28px;
-  height: 28px;
-  stroke: #fff;
+  width: 2.8rem;
+  height: 2.8rem;
+  stroke: var(--clr-light);
   cursor: pointer;
 }
 

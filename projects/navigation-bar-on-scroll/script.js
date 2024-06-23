@@ -8,7 +8,6 @@ let revealNavbar = false;
 const navbarObserver = new IntersectionObserver(function (e) {
   const [observer] = e;
   if (!observer.isIntersecting) {
-    console.log(observer);
     revealNavbar = true;
   }
 });
@@ -24,13 +23,11 @@ window.addEventListener("scroll", function () {
 
   // when scrolled down
   if (oldScrollY < window.scrollY && revealNavbar) {
-    console.log(revealNavbar);
     navbar.style.opacity = 0;
   }
 
   // when scrolled up
   if (oldScrollY > window.scrollY && revealNavbar) {
-    console.log(revealNavbar);
     navbar.classList.add("navbar--sticky");
     navbar.style.opacity = 1;
   }
