@@ -11,11 +11,11 @@ counterValue.textContent = 0;
 
 function checkValue() {
   const counterNbr = Number(counterValue.textContent);
-  if (counterNbr === 0) counterValue.style.color = "black";
+  if (counterNbr === 0) counterValue.style.color = "var(--clr-dark)";
 
-  if (counterNbr > 0) counterValue.style.color = "green";
+  if (counterNbr > 0) counterValue.style.color = "var(--clr-green)";
 
-  if (counterNbr < 0) counterValue.style.color = "red";
+  if (counterNbr < 0) counterValue.style.color = "var(--clr-red)";
 }
 
 counterControls.addEventListener("click", function (e) {

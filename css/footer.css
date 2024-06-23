@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  background-color: #030712;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
   gap: 3.2rem;
   padding: 3.2rem 1.6rem;
 }

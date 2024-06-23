@@ -14,82 +14,12 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../header.css" />
-    <link rel="stylesheet" href="../../footer.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-      }
-
-      html {
-        font-size: 62.5%;
-      }
-
-      main {
-        min-height: 80vh;
-        font-family: "Inter", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      button {
-        font-size: 16px;
-        background-color: #fff;
-        border: 2px solid #222;
-        border-radius: 8px;
-        padding: 6px 24px;
-        cursor: pointer;
-        transition: all 200ms;
-      }
-
-      button:hover {
-        color: #fff;
-      }
-
-      button:active {
-        transform: scale(0.9);
-      }
-
-      .counter-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 60px;
-      }
-
-      .counter {
-        font-size: 128px;
-        font-weight: 600;
-      }
-
-      .counter__control-btns {
-        display: flex;
-        gap: 32px;
-        align-items: center;
-      }
-
-      .btn--decrease:hover {
-        background-color: orangered;
-        border-color: orangered;
-      }
-
-      .btn--reset:hover {
-        background-color: #000;
-        border-color: #000;
-      }
-
-      .btn--increase:hover {
-        background-color: green;
-        border-color: green;
-      }
-    </style>
+    <link rel="stylesheet" href="../../css/global-reset.css" />
+    <link rel="stylesheet" href="../../css/utility-classes.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
     <script defer src="script.js"></script>
     <title>Counter</title>
   </head>
@@ -118,9 +48,9 @@
       <div class="counter-container">
         <div class="counter">0</div>
         <div class="counter__control-btns">
-          <button class="btn--decrease shadow-m">Decrease</button>
-          <button class="btn--reset shadow-m">Reset</button>
-          <button class="btn--increase shadow-m">Increase</button>
+          <button class="btn--decrease border-radius-l">Decrease</button>
+          <button class="btn--reset border-radius-l">Reset</button>
+          <button class="btn--increase border-radius-l">Increase</button>
         </div>
       </div>
     </main>
