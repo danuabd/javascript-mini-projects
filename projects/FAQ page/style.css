@@ -1,27 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-}
-
-html {
-  font-size: 62.5%;
-}
-
 .section--faq {
   min-height: 60vh;
+}
+
+.faq-container {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
 .faq {
-  max-width: 600px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-l);
   box-shadow: 0 0px 16px 1px rgb(0 0 0 / 0.1);
   padding: 16px 32px;
   margin: 0 auto;
@@ -31,13 +19,14 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.2rem;
   background-color: #fff;
   border-radius: 8px;
   cursor: pointer;
 }
 
 .faq__q {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3.448vw, 2rem);
 }
 
 .faq__body {
@@ -50,14 +39,15 @@ html {
 }
 
 .faq__a {
-  font-size: 1.6rem;
+  font-size: clamp(var(--fs-small), 2.07vw, var(--fs-base));
   line-height: 1.6;
 }
 
 .faq__btn {
   font-size: 1.8rem;
   border: none;
-  background-color: peachpuff;
+  color: var(--clr-light);
+  background-color: var(--clr-green);
   cursor: pointer;
   border-radius: 6px;
   padding: 6px 10px;
@@ -71,7 +61,7 @@ html {
 .faq--open {
   max-height: max-content;
   opacity: 1;
-  padding-top: 16px;
+  padding-top: 2.4rem;
 }
 
 .faq__btn--open {
