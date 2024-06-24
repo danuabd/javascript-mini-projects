@@ -37,10 +37,6 @@ button {
   cursor: pointer;
 }
 
-button:active {
-  transform: scale(0.9);
-}
-
 button,
 textarea,
 input,

@@ -139,3 +139,7 @@
 .shadow-400 {
   box-shadow: var(--shadow-400);
 }
+
+.btn:active {
+  transform: scale(0.9);
+}
