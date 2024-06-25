@@ -3,6 +3,9 @@
 // Form element
 const form = document.querySelector(".form");
 
+// success message
+const successMessage = document.querySelector(".success-msg");
+
 // Form inputs
 const inputAll = document.querySelectorAll(".form__input");
 const inputFName = document.querySelector("#f-name");
@@ -11,6 +14,9 @@ const inputEmail = document.querySelector("#email");
 const inputUserName = document.querySelector("#username");
 const inputPassword = document.querySelector("#password");
 const inputConfirmPassword = document.querySelector("#password-confirm");
+
+// hold values to check all inputs at once
+const arr = [];
 
 // Add animation
 function showError(el, msg) {
@@ -26,8 +32,6 @@ function showError(el, msg) {
 
   el.classList.add("warning-outline");
   el.classList.add("warning-animation");
-
-  console.log(el);
 
   setTimeout(() => {
     el.classList.remove("warning-animation");
@@ -125,13 +129,56 @@ function validate() {
   checkPassword();
 
   checkConfirmPassword();
+
+  registerUser();
+}
+
+// Display success message
+function displaySuccess() {
+  if (arr.every((el) => el === 1)) {
+    successMessage.classList.remove("success-msg-hidden");
+    clearInputs();
+    console.log("registered");
+    console.log(arr);
+  } else {
+    successMessage.classList.add("success-msg-hidden");
+    console.log("not yet");
+    console.log(arr);
+  }
+}
+
+// Register user
+function registerUser() {
+  inputAll.forEach((el) => {
+    if (
+      el
+        .closest(".form__column")
+        .querySelector(".form__input-warning")
+        .classList.contains("hide")
+    )
+      arr.push(1);
+    else arr.push(0);
+  });
+
+  displaySuccess();
+  arr.length = 0;
+}
+
+// clear all input fields
+function clearInputs() {
+  inputAll.forEach((el) => {
+    el.value = "";
+    el.blur();
+  });
 }
 
 // Submit event handler
 form.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (e.target.closest(".btn--submit")) validate();
+  if (e.target.closest(".btn--submit")) {
+    validate();
+  }
 });
 
 // Input event listener

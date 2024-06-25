@@ -149,3 +149,31 @@ main {
     width: 100%;
   }
 }
+
+/* Success message */
+.success-msg {
+  max-width: max-content;
+  padding: 3.6rem;
+  color: var(--clr-dark);
+  background-color: #86efac;
+  transition: opacity 300ms;
+}
+
+.success-msg-hidden {
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* RESPONSIVE */
+@media (max-width: 680px) {
+  .success-msg {
+    padding: 1.6rem;
+  }
+
+  .success-msg h2,
+  .success-msg p {
+    text-align: center;
+  }
+}
