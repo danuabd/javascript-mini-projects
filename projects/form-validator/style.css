@@ -1,0 +1,151 @@
+* {
+  line-height: 1;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.form-validator {
+  max-width: 580px;
+  padding: 3.6rem 3.6rem;
+  border-radius: var(--border-radius-l);
+  border: 2px solid #e2e8f0;
+}
+
+.form {
+  max-width: 100%;
+  /* border: 2px solid blue; */
+  margin: 0 auto;
+}
+
+.form__row {
+  display: flex;
+
+  /* This makes the input fields aligned perfectly ✅*/
+  justify-content: space-between;
+  /*  */
+
+  align-items: flex-start;
+  /* border: 2px solid green; */
+  margin-bottom: var(--space-700);
+}
+
+.form__row:last-child {
+  margin-bottom: 0;
+}
+
+.form__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.2rem;
+}
+
+.form label {
+  font-size: 1.5rem;
+  color: var(--clr-dark);
+  opacity: 0.7;
+  line-height: 1;
+}
+
+.form input {
+  font-size: 1.5rem;
+  color: #334155;
+  letter-spacing: 0.3px;
+  max-width: 220px;
+  padding: 8px 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: var(--border-radius-s);
+  outline: none;
+  transition: border 300ms;
+}
+
+.form input:focus {
+  border: 2px solid #334155;
+}
+
+.form input::placeholder {
+  font-size: 1.3rem;
+}
+
+.form__input-warning {
+  font-size: 1.3rem;
+  color: var(--clr-red);
+}
+
+.btn--submit {
+  font-size: 1.6rem;
+  color: var(--clr-light);
+  background-color: #334155;
+  border: 2px solid #334155;
+  width: 80%;
+  padding: 1.2rem 1.2rem;
+  margin-top: 3.2rem;
+  border-radius: var(--border-radius-s);
+  transition: color 200ms, background-color 300ms, border 200ms, transform 300ms;
+}
+
+.btn--submit:hover {
+  color: #334155;
+  background-color: var(--clr-light);
+}
+
+.btn--submit:active {
+  color: var(--clr-light);
+  background-color: #334155;
+  transform: scale(0.9);
+}
+
+/* Make outline red */
+.warning-outline {
+  border: 2px solid var(--clr-red) !important;
+}
+
+/* Animate user input fields */
+.warning-animation {
+  animation: shake 0.5s ease 0s 1 normal none;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  16%,
+  48%,
+  80% {
+    transform: translateX(-10px);
+  }
+
+  32%,
+  64%,
+  96% {
+    transform: translateX(10px);
+  }
+}
+
+/* To hide warning messages */
+.hide {
+  display: none;
+  opacity: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 680px) {
+  .form-validator {
+    width: clamp(300px, 58.824vw, 400px);
+  }
+  .form__row {
+    max-width: max-content;
+    flex-direction: column;
+    gap: 3.2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn--submit {
+    width: 100%;
+  }
+}
