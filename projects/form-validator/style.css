@@ -27,9 +27,8 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 2rem;
-  row-gap: 2.4rem;
+  row-gap: 2.8rem;
   align-items: start;
-  /* border: 2px solid blue; */
   margin: 0 auto;
 }
 

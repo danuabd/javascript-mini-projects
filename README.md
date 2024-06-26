@@ -1,7 +1,9 @@
 # javascript-mini-projects
+
 A collection of small JavaScript projects, inspired by the '40 JavaScript Projects for Beginners' blog post from freeCodeCamp.
 
 ## Projects
+
 - **Color Flipper**
 - **Counter**
 - **Review Carousel**
@@ -9,26 +11,14 @@ A collection of small JavaScript projects, inspired by the '40 JavaScript Projec
 - **Sidebar**
 - **Modal**
 - **FAQ Page**
-- **Restaurant Menu Page**
-- **Video Background**
 - **Navigation Bar on Scroll**
 - **Tabs that Display Different Content**
 - **Countdown Clock**
 - **Your Own Lorem Ipsum**
 - **Grocery List**
 - **Image Slider**
-- **Rock Paper Scissors Game**
-- **Simon Game**
-- **Platformer Game**
-- **Doodle Jump**
-- **Flappy Bird**
-- **Memory Game**
-- **Whack-a-mole Game**
-- **Connect Four Game**
-- **Snake Game**
-- **Space Invaders Game**
-- **Frogger Game**
-- **Tetris Game**
+- **Form Validator**
 
 ## Getting Started
+
 To get started with any of the projects, clone the repository and navigate to the project's directory.
