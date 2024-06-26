@@ -1,0 +1,32 @@
+/* HEADING */
+
+.cal__heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.h2 {
+  font-size: 3.6rem;
+  margin-bottom: 1.8rem;
+}
+
+.text-highlight {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--clr-dark);
+  background-color: var(--clr-yellow);
+  border-radius: var(--border-radius-m);
+  padding: 8px 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.cal__heading p {
+  max-width: 80%;
+}
+
+/* CONVERTER */
