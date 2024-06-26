@@ -55,6 +55,98 @@
             to convert currencies.
           </p>
         </div>
+        <div class="converter">
+          <form class="converter__form">
+            <div class="form__row">
+              <div class="form__col">
+                <label class="form__item-1" for="base-currencey"
+                  >Select Base Currency</label
+                >
+                <div class="form__selection">
+                  <select
+                    class="form__item-2"
+                    name="base-currency"
+                    id="base-currency"
+                  >
+                    <option value="0">Select a currency</option>
+                    <option value="EUR">EUR</option>
+                  </select>
+                  <span class="form__dropdown-icon"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class=""
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="form__col">
+                <input
+                  class="form__item-3"
+                  placeholder="0.00"
+                  id="input-base-currency"
+                  type="number"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form__row row--2">
+              <button class="btn btn--swap">Swap 🔃</button>
+              <p class="p">Rate: <span id="rate">N/A</span></p>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label class="form__item-1" for="quote-currencey"
+                  >Select Quote Currency</label
+                >
+                <div class="form__selection">
+                  <select
+                    class="form__item-2"
+                    name="quote-currency"
+                    id="quote-currency"
+                  >
+                    <option value="0">Select a currency</option>
+                    <option value="usd">USD</option>
+                  </select>
+                  <span class="form__dropdown-icon"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class=""
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="form__col">
+                <input
+                  class="form__item-3"
+                  placeholder="0.00"
+                  id="input-quote-currency"
+                  type="number"
+                  required
+                />
+              </div>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
     <footer class="footer">

@@ -7,6 +7,11 @@
   --clr-green: #16a34a;
   --clr-red: #dc2626;
 
+  /* COLORS ADDED LATER */
+  --clr-gray-2: #e2e8f0;
+  --clr-green-2: #86efac;
+  --clr-dark-2: #334155;
+
   /* FONT SIZE */
   --fs-small: 1.333rem;
   --fs-base: 1.6rem;
