@@ -6,33 +6,45 @@ main {
   min-height: 100vh;
 }
 
+.h2 {
+  font-size: clamp(2.4rem, 3.646vw, 3.2rem) !important;
+}
+
+.form-description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
 .form-validator {
-  max-width: 580px;
-  padding: 3.6rem 3.6rem;
+  max-width: 540px;
+  padding: 3.6rem;
   border-radius: var(--border-radius-l);
   border: 2px solid #e2e8f0;
 }
 
 .form {
   max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 2.4rem;
+  align-items: start;
   /* border: 2px solid blue; */
   margin: 0 auto;
 }
 
-.form__row {
-  display: flex;
-
-  /* This makes the input fields aligned perfectly ✅*/
-  justify-content: space-between;
-  /*  */
-
-  align-items: flex-start;
-  /* border: 2px solid green; */
-  margin-bottom: var(--space-700);
+/* Placing form elements */
+.form__item-3,
+.form__item-4,
+.form__item-5,
+.form__item-6,
+.form__item-7,
+.form__item-8 {
+  grid-column: 1/3;
 }
 
-.form__row:last-child {
-  margin-bottom: 0;
+.form__item-7 {
+  align-self: center;
 }
 
 .form__column {
@@ -44,18 +56,18 @@ main {
 }
 
 .form label {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--clr-dark);
-  opacity: 0.7;
+  opacity: 0.8;
   line-height: 1;
 }
 
 .form input {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #334155;
-  letter-spacing: 0.3px;
-  max-width: 220px;
-  padding: 8px 1rem;
+  letter-spacing: 0.2px;
+  width: 100%;
+  padding: 1rem;
   border: 2px solid #cbd5e1;
   border-radius: var(--border-radius-s);
   outline: none;
@@ -67,7 +79,8 @@ main {
 }
 
 .form input::placeholder {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.2px;
 }
 
 .form__input-warning {
@@ -82,7 +95,7 @@ main {
   border: 2px solid #334155;
   width: 80%;
   padding: 1.2rem 1.2rem;
-  margin-top: 3.2rem;
+  margin-top: 1.8rem;
   border-radius: var(--border-radius-s);
   transition: color 200ms, background-color 300ms, border 200ms, transform 300ms;
 }
@@ -134,17 +147,12 @@ main {
 }
 
 /* RESPONSIVE */
-@media (max-width: 680px) {
-  .form-validator {
-    width: clamp(300px, 58.824vw, 400px);
+@media (max-width: 460px) {
+  .form__item-1,
+  .form__item-2 {
+    grid-column: 1/3;
   }
-  .form__row {
-    max-width: max-content;
-    flex-direction: column;
-    gap: 3.2rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
+
   .btn--submit {
     width: 100%;
   }
@@ -152,7 +160,7 @@ main {
 
 /* Success message */
 .success-msg {
-  max-width: max-content;
+  max-width: 100%;
   padding: 3.6rem;
   color: var(--clr-dark);
   background-color: #86efac;

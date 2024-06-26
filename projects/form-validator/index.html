@@ -44,110 +44,108 @@
       </div>
     </header>
     <main class="margin-xl">
-      <section class="section--form-validator">
+      <section class="section--form-validator padding-m">
         <div class="form-validator container-600 container-centered shadow-300">
-          <h2 class="h2 text-centered margin-m">Sign Up Form</h2>
+          <h2 class="h2 text-centered margin-s">Sign Up Form</h2>
+          <p class="form-description margin-m text text-centered">
+            This form uses simple input validation techniques.
+          </p>
           <form class="form">
-            <div class="form__row">
-              <div class="form__column">
-                <label for="f-name">First Name</label>
-                <input
-                  type="text"
-                  name="First Name"
-                  placeholder="Ex: James"
-                  class="form__input"
-                  id="f-name"
-                />
-                <span class="form__input-warning hide"
-                  >Enter a valid first name!</span
-                >
-              </div>
-              <div class="form__column">
-                <label for="l-name">Last Name</label>
-                <input
-                  type="text"
-                  name="Last Name"
-                  placeholder="Ex: William"
-                  class="form__input"
-                  id="l-name"
-                />
-                <span class="form__input-warning hide"
-                  >Enter a valid last name!</span
-                >
-              </div>
+            <div class="form__column form__item-1">
+              <label for="f-name">First Name</label>
+              <input
+                type="text"
+                name="First Name"
+                placeholder="James"
+                class="form__input"
+                id="f-name"
+              />
+              <span class="form__input-warning hide"
+                >Enter a valid first name!</span
+              >
             </div>
-
-            <div class="form__row col-2">
-              <div class="form__column">
-                <label for="email">E mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Ex: james@gmail.com"
-                  class="form__input"
-                  id="email"
-                />
-                <span class="form__input-warning hide"
-                  >Enter a valid email address!</span
-                >
-              </div>
-              <div class="form__column">
-                <label for="username">User Name</label>
-                <input
-                  type="text"
-                  name="Username"
-                  placeholder="Ex: jamesW"
-                  class="form__input"
-                  id="username"
-                />
-                <span class="form__input-warning hide"
-                  >Username is not available</span
-                >
-              </div>
+            <div class="form__column form__item-2">
+              <label for="l-name">Last Name</label>
+              <input
+                type="text"
+                name="Last Name"
+                placeholder="William"
+                class="form__input"
+                id="l-name"
+              />
+              <span class="form__input-warning hide"
+                >Enter a valid last name!</span
+              >
             </div>
-            <div class="form__row col-2">
-              <div class="form__column">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  name="Password"
-                  placeholder="Enter a password"
-                  class="form__input"
-                  id="password"
-                />
-                <span class="form__input-warning hide"
-                  >Enter a strong password!</span
-                >
-              </div>
-              <div class="form__column">
-                <label for="password-confirm">Confirm Password</label>
-                <input
-                  type="password"
-                  name="Confirm Password"
-                  placeholder="Re-enter the password"
-                  class="form__input"
-                  id="password-confirm"
-                />
-                <span class="form__input-warning hide"
-                  >Passwords doesn't match!</span
-                >
-              </div>
+            <div class="form__column form__item-3">
+              <label for="email">E mail</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="james@gmail.com"
+                class="form__input"
+                id="email"
+              />
+              <span class="form__input-warning hide"
+                >Enter a valid email address!</span
+              >
             </div>
-            <div class="form__row">
+            <div class="form__column form__item-4">
+              <label for="username">User Name</label>
+              <input
+                type="text"
+                name="Username"
+                placeholder="jamesWillie93"
+                class="form__input"
+                id="username"
+              />
+              <span class="form__input-warning hide"
+                >Username is not available</span
+              >
+            </div>
+            <div class="form__column form__item-5">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="Password"
+                placeholder="Enter a Password"
+                class="form__input"
+                id="password"
+              />
+              <span class="form__input-warning hide"
+                >Enter a strong password!</span
+              >
+            </div>
+            <div class="form__column form__item-6">
+              <label for="password-confirm">Confirm Password</label>
+              <input
+                type="password"
+                name="Confirm Password"
+                placeholder="Confirm Password"
+                class="form__input"
+                id="password-confirm"
+              />
+              <span class="form__input-warning hide"
+                >Passwords doesn't match!</span
+              >
+            </div>
+            <div class="form__column form__item-7">
               <button class="btn--submit shadow-200 container-centered">
                 Sign Up
               </button>
             </div>
-            <div class="success-msg success-msg-hidden container-centered">
+            <div
+              class="form__item-8 success-msg success-msg-hidden container-centered"
+            >
               <h2 class="h2 margin-s">Success!</h2>
               <p class="p">
-                A confirmation message have been sent to your email.
+                A confirmation message has been sent to your email (Kidding!
+                😉).
               </p>
             </div>
           </form>
         </div>
       </section>
-      <div class="overlay"></div>
     </main>
     <footer class="footer">
       <div class="footer__box--1">
