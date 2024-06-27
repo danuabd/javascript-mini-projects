@@ -92,7 +92,7 @@
   outline: none;
   border: 2px solid var(--clr-gray-2);
   border-radius: var(--border-radius-s);
-  transition: border 300ms;
+  transition: border 300ms, border-color 300ms;
   cursor: pointer;
   padding: 12px 3.2rem 12px 8px;
 }
