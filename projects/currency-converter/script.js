@@ -7,9 +7,6 @@ const inputBaseCurrency = document.querySelector("#input-base-currency");
 const inputQuoteCurrency = document.querySelector("#input-quote-currency");
 const rateText = document.querySelector("#rate");
 
-let b = "";
-console.log(Number.isFinite(b));
-
 // currency list
 const currencies = [
   "USD",
@@ -235,7 +232,9 @@ function getExchangeRate(currCode) {
       today = result.date;
       selectedBaseCurr = currCode;
       renderExchangeRate();
-    });
+      convertCurrency(selectBaseCurrency);
+    })
+    .catch((err) => console.log(err));
 }
 
 // Render exchange rate
@@ -295,29 +294,31 @@ function clearFields() {
 
 // convert currencies
 function convertCurrency(el) {
-  if (checkEmptySelections()) return;
+  /* 
+  convertCurrency(el) function will be called:
 
+  -when Base Currency is selected
+  -When Base currency and any input is provided --> check if either input is provided ✅
+
+  */
+
+  // get base currency input and quote currency input
   const [baseIn, quoteIn] = getInputs();
-  const [selectBase, selectQuote] = getSelections();
-  let baseOut, quoteOut;
 
-  if (el === inputBaseCurrency) {
-    quoteOut = (baseIn * exchangeRate[selectQuote]).toFixed(2);
+  if (baseIn <= 0 && quoteIn <= 0) return;
 
-    if (quoteOut > 0.0) {
-      inputQuoteCurrency.value = quoteOut;
-    } else {
-      clearFields();
+  // get quote selection
+  const [baseCurr, quoteCurr] = getSelections();
+
+  if (quoteCurr === "0") return;
+  else {
+    if (el === inputBaseCurrency || el === selectQuoteCurrency) {
+      inputQuoteCurrency.value = baseIn * exchangeRate[quoteCurr];
     }
-  }
 
-  if (el === inputQuoteCurrency) {
-    baseOut = (quoteIn / exchangeRate[selectQuote]).toFixed(2);
-
-    if (baseOut > 0.0) {
-      inputBaseCurrency.value = baseOut;
-    } else {
-      clearFields();
+    if (el === inputQuoteCurrency || el === selectBaseCurrency) {
+      console.log("called");
+      inputBaseCurrency.value = quoteIn / exchangeRate[quoteCurr];
     }
   }
 }
@@ -325,36 +326,76 @@ function convertCurrency(el) {
 form.addEventListener("change", function (e) {
   if (!e.target.closest(".selection")) return;
 
-  //   Do nothing if base currency is not selected
-  if (getSelections()[0] === "0") {
+  // get selection
+  const [baseCurr, quoteCurr] = getSelections();
+
+  // store selected element
+  const selectedEl = e.target;
+
+  // Do nothing if base currency is not selected
+  if (baseCurr === "0") {
     renderExchangeRate("N/A");
+    selectedEl.blur();
     return;
   }
 
   //   Respond to base currency changes
-  if (e.target === selectBaseCurrency)
+  if (selectedEl === selectBaseCurrency) {
+    // get exchange rate
     getExchangeRate(selectBaseCurrency.value);
 
+    // do the conversion --> happen inside the getExchangeRate() for now
+  }
+
   //   Respond to quote currency changes
-  if (e.target === selectQuoteCurrency) renderExchangeRate();
+  if (selectedEl === selectQuoteCurrency) {
+    if (quoteCurr === "0") {
+      renderExchangeRate("N/A");
+      selectedEl.blur();
+    } else {
+      renderExchangeRate();
+      convertCurrency(selectedEl);
+      selectedEl.blur();
+    }
+  }
 
   // Do these whatever happens
   renderWarning(0);
-  e.target.blur();
 });
 
 form.addEventListener("input", function (e) {
   const selected = e.target;
   if (!selected.closest("INPUT")) return;
+
+  // Return if Base currency is not selected
+  if (selectBaseCurrency.value === "0") return;
+
+  // Get inputted values
+  const [baseIn, quoteIn] = getInputs();
+
+  // return if baseInput and quoteInput both are empty
+  if (!(baseIn || quoteIn)) {
+    renderWarning(0);
+    return;
+  }
+
+  // get selections
+  const [baseCurr, quoteCurr] = getSelections();
+
+  // return if baseCurr and quoteCurr both are not selected
+  if (baseCurr === "0" && quoteCurr === "0") {
+    renderWarning(1);
+    return;
+  }
+
+  // remove warning outline
+  renderWarning(0);
+
+  // send the selected input for conversion
+  convertCurrency(selected);
+
   // truncate the input
   truncInputs();
-
-  if (checkEmptySelections() && selected.value > 0) {
-    renderWarning(1);
-  } else {
-    renderWarning(0);
-    convertCurrency(selected);
-  }
 });
 
 form.addEventListener("click", function (e) {
