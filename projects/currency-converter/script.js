@@ -168,7 +168,10 @@ const currencies = [
   "STN",
 ];
 
-let exchangeRate, today, selectedBaseCurr;
+// currency rates: for future updates (store objects received from the fetch API for faster outputs)
+const currencyRates = [];
+
+let exchangeRate, today, selectedBaseCurr, timeOut;
 
 // Validate inputs
 function truncInputs() {
@@ -243,8 +246,10 @@ function renderExchangeRate(text) {
 
   if (text) rateText.textContent = text;
 
-  if (baseCurr !== "0" && quoteCurr !== "0")
-    rateText.textContent = exchangeRate[quoteCurr].toFixed(4);
+  if (baseCurr !== "0" && quoteCurr !== "0") {
+    rateText.textContent = `${exchangeRate[quoteCurr].toFixed(4)}`;
+    rateText.closest(".p").setAttribute("title", `Exchange Rate on ${today}`);
+  }
 }
 
 // Get selection values. Returns: an array [baseCurr, quoteCurr]
@@ -280,7 +285,18 @@ function swapCurrencies() {
     selectQuoteCurrency.value = baseCurr;
 
     inputBaseCurrency.value = quoteIn;
-    inputQuoteCurrency.value = baseIn;
+
+    // Add swap animation
+    selectBaseCurrency.classList.add("swap-animation");
+    selectQuoteCurrency.classList.add("swap-animation");
+
+    if (timeOut) clearTimeout(timeOut);
+
+    timeOut = setTimeout(() => {
+      selectBaseCurrency.classList.remove("swap-animation");
+      selectQuoteCurrency.classList.remove("swap-animation");
+    }, 1000);
+
     // Trigger fetch api to get new exchange rates
     getExchangeRate(selectBaseCurrency.value);
   }
@@ -313,12 +329,12 @@ function convertCurrency(el) {
   if (quoteCurr === "0") return;
   else {
     if (el === inputBaseCurrency || el === selectQuoteCurrency) {
-      inputQuoteCurrency.value = baseIn * exchangeRate[quoteCurr];
+      inputQuoteCurrency.value = (baseIn * exchangeRate[quoteCurr]).toFixed(2);
     }
 
     if (el === inputQuoteCurrency || el === selectBaseCurrency) {
       console.log("called");
-      inputBaseCurrency.value = quoteIn / exchangeRate[quoteCurr];
+      inputBaseCurrency.value = (quoteIn / exchangeRate[quoteCurr]).toFixed(2);
     }
   }
 }
@@ -367,15 +383,18 @@ form.addEventListener("input", function (e) {
   const selected = e.target;
   if (!selected.closest("INPUT")) return;
 
-  // Return if Base currency is not selected
-  if (selectBaseCurrency.value === "0") return;
-
   // Get inputted values
   const [baseIn, quoteIn] = getInputs();
 
   // return if baseInput and quoteInput both are empty
   if (!(baseIn || quoteIn)) {
     renderWarning(0);
+    return;
+  }
+
+  // Return if Base currency is not selected
+  if (selectBaseCurrency.value === "0") {
+    renderWarning(1);
     return;
   }
 
@@ -387,9 +406,6 @@ form.addEventListener("input", function (e) {
     renderWarning(1);
     return;
   }
-
-  // remove warning outline
-  renderWarning(0);
 
   // send the selected input for conversion
   convertCurrency(selected);
