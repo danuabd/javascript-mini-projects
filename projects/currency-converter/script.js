@@ -7,9 +7,31 @@ const inputBaseCurrency = document.querySelector("#input-base-currency");
 const inputQuoteCurrency = document.querySelector("#input-quote-currency");
 const rateText = document.querySelector("#rate");
 
+let b = "";
+console.log(Number.isFinite(b));
+
 // currency list
 const currencies = [
+  "USD",
   "EUR",
+  "JPY",
+  "GBP",
+  "CHF",
+  "CAD",
+  "AUD",
+  "CNY",
+  "INR",
+  "BRL",
+  "RUB",
+  "KRW",
+  "ZAR",
+  "MXN",
+  "SGD",
+  "NZD",
+  "HKD",
+  "NOK",
+  "SEK",
+  "TRY",
   "AED",
   "AFN",
   "XCD",
@@ -17,8 +39,6 @@ const currencies = [
   "AMD",
   "AOA",
   "ARS",
-  "USD",
-  "AUD",
   "AWG",
   "AZN",
   "BAM",
@@ -31,20 +51,14 @@ const currencies = [
   "BMD",
   "BND",
   "BOB",
-  "BRL",
   "BSD",
   "BTN",
-  "NOK",
   "BWP",
   "BYN",
   "BZD",
-  "CAD",
   "CDF",
   "XAF",
-  "CHF",
-  "NZD",
   "CLP",
-  "CNY",
   "COP",
   "CRC",
   "CUP",
@@ -61,7 +75,6 @@ const currencies = [
   "ETB",
   "FJD",
   "FKP",
-  "GBP",
   "GEL",
   "GHS",
   "GIP",
@@ -69,26 +82,22 @@ const currencies = [
   "GNF",
   "GTQ",
   "GYD",
-  "HKD",
   "HNL",
   "HRK",
   "HTG",
   "HUF",
   "IDR",
   "ILS",
-  "INR",
   "IQD",
   "IRR",
   "ISK",
   "JMD",
   "JOD",
-  "JPY",
   "KES",
   "KGS",
   "KHR",
   "KMF",
   "KPW",
-  "KRW",
   "KWD",
   "KYD",
   "KZT",
@@ -108,7 +117,6 @@ const currencies = [
   "MUR",
   "MVR",
   "MWK",
-  "MXN",
   "MYR",
   "MZN",
   "NAD",
@@ -127,14 +135,11 @@ const currencies = [
   "QAR",
   "RON",
   "RSD",
-  "RUB",
   "RWF",
   "SAR",
   "SBD",
   "SCR",
   "SDG",
-  "SEK",
-  "SGD",
   "SHP",
   "SLL",
   "SOS",
@@ -148,7 +153,6 @@ const currencies = [
   "TMT",
   "TND",
   "TOP",
-  "TRY",
   "TTD",
   "TWD",
   "TZS",
@@ -161,7 +165,6 @@ const currencies = [
   "VUV",
   "WST",
   "YER",
-  "ZAR",
   "ZMW",
   "ZWL",
   "MRU",
@@ -169,6 +172,27 @@ const currencies = [
 ];
 
 let exchangeRate, today, selectedBaseCurr;
+
+// Validate inputs
+function truncInputs() {
+  const [baseIn, quoteIn] = getInputs();
+
+  if (baseIn > 999999999) {
+    inputBaseCurrency.value = 999999999;
+  }
+
+  if (quoteIn > 999999999) {
+    inputQuoteCurrency.value = 999999999;
+  }
+
+  if (baseIn < 0) {
+    inputBaseCurrency.value = "";
+  }
+
+  if (quoteIn < 0) {
+    inputQuoteCurrency.value = "";
+  }
+}
 
 // outline selection with red
 function renderWarning(val) {
@@ -215,8 +239,10 @@ function getExchangeRate(currCode) {
 }
 
 // Render exchange rate
-function renderExchangeRate() {
+function renderExchangeRate(text) {
   const [baseCurr, quoteCurr] = getSelections();
+
+  if (text) rateText.textContent = text;
 
   if (baseCurr !== "0" && quoteCurr !== "0")
     rateText.textContent = exchangeRate[quoteCurr].toFixed(4);
@@ -300,7 +326,10 @@ form.addEventListener("change", function (e) {
   if (!e.target.closest(".selection")) return;
 
   //   Do nothing if base currency is not selected
-  if (getSelections()[0] === "0") return;
+  if (getSelections()[0] === "0") {
+    renderExchangeRate("N/A");
+    return;
+  }
 
   //   Respond to base currency changes
   if (e.target === selectBaseCurrency)
@@ -315,12 +344,16 @@ form.addEventListener("change", function (e) {
 });
 
 form.addEventListener("input", function (e) {
-  if (!e.target.closest("INPUT")) return;
+  const selected = e.target;
+  if (!selected.closest("INPUT")) return;
+  // truncate the input
+  truncInputs();
 
-  if (checkEmptySelections(1, 1)) renderWarning(1);
-  else {
+  if (checkEmptySelections() && selected.value > 0) {
+    renderWarning(1);
+  } else {
     renderWarning(0);
-    convertCurrency(e.target);
+    convertCurrency(selected);
   }
 });
 
