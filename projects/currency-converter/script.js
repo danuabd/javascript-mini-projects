@@ -332,9 +332,22 @@ function convertCurrency(el) {
       inputQuoteCurrency.value = (baseIn * exchangeRate[quoteCurr]).toFixed(2);
     }
 
-    if (el === inputQuoteCurrency || el === selectBaseCurrency) {
-      console.log("called");
+    if (el === inputQuoteCurrency) {
       inputBaseCurrency.value = (quoteIn / exchangeRate[quoteCurr]).toFixed(2);
+    }
+
+    // Resolve the bug when Base currency is selected after quote and quote inputs are given, the base input changing according to the quote input
+
+    if (el === selectBaseCurrency) {
+      if (!inputBaseCurrency.value) {
+        inputBaseCurrency.value = (quoteIn / exchangeRate[quoteCurr]).toFixed(
+          2
+        );
+      } else {
+        inputQuoteCurrency.value = (baseIn * exchangeRate[quoteCurr]).toFixed(
+          2
+        );
+      }
     }
   }
 }
