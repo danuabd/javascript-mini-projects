@@ -50,6 +50,7 @@
 @media (max-width: 660px) {
   .expanding-cards {
     width: 100%;
+    min-width: 0px;
     height: 60rem;
     flex-direction: column;
     align-items: center;
