@@ -18,6 +18,9 @@ A collection of small JavaScript projects, inspired by the '40 JavaScript Projec
 - **Grocery List**
 - **Image Slider**
 - **Form Validator**
+- **Currency Converter**
+- **Expanding Cards**
+- **Step Progress Bar**
 
 ## Getting Started
 
