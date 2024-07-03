@@ -43,7 +43,39 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section class="section--expanding-search-bar padding-l margin-xl">
+        <h2 class="h2 text-centered margin-s">Expanding Search Bar</h2>
+        <p class="p text-centered margin-m">
+          Click on the search icon to reveal the search bar!
+        </p>
+        <form class="search">
+          <input
+            type="text"
+            name="search"
+            placeholder="search here..."
+            class="search__bar--collapsed"
+            id="search__bar"
+          />
+          <button class="search__btn search__btn--collapsed">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="search__icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </button>
+        </form>
+      </section>
+    </main>
     <footer class="footer">
       <div class="footer__box--1">
         <p>Hosted on</p>
