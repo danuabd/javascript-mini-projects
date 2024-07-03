@@ -1,0 +1,90 @@
+/* STEP PROGRESS BAR */
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 3px;
+  background-color: var(--clr-gray-2);
+  transform: translateY(-50%);
+  z-index: -2;
+}
+
+.progress-bar {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: var(--clr-dark-2);
+  transform: translateY(-50%);
+  transition: width 800ms;
+  z-index: -1;
+}
+
+.steps__step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 1.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 3px solid var(--clr-gray-2);
+  border-radius: 50%;
+  background-color: var(--clr-light);
+  transition-property: border-color;
+  transition-duration: 200ms;
+
+  /* Add delay to wait for the progress bar to reach the "step" circle */
+  /* transition-delay: 600ms; */
+}
+
+.steps__step span {
+  /* background-color: orange; */
+  color: var(--clr-dark);
+}
+
+.progress-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.progress-btns button {
+  width: 9.6rem;
+  height: 3.6rem;
+  font-size: 1.5rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-2);
+  border-radius: 6px;
+  transition: transform 200ms, color 200ms, background-color 200ms;
+}
+
+.progress-btns button:hover,
+.progress-btns button:active {
+  color: var(--clr-light);
+  background-color: var(--clr-green);
+}
+
+.progress-btns button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.progress-btns button:disabled:hover,
+.progress-btns button:disabled:active {
+  background-color: var(--clr-dark-2);
+  transform: none;
+}
