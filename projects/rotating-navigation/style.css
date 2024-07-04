@@ -1,0 +1,13 @@
+/* ROTATING NAVIGATION */
+
+.rotating__blog-post figure {
+  max-width: 800px;
+  object-fit: cover;
+  box-shadow: var(--shadow-300);
+}
+
+.rotating__blog-post figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-l);
+}
