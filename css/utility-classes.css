@@ -64,6 +64,10 @@
   max-width: 60rem;
 }
 
+.margin-xs {
+  margin-bottom: var(--space-300);
+}
+
 .margin-s {
   margin-bottom: var(--space-600);
 }
