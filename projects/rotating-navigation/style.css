@@ -1,12 +1,140 @@
 /* ROTATING NAVIGATION */
 
-.rotating__blog-post figure {
+/* Remove the default box shadow from header */
+.header {
+  box-shadow: none;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.navigation__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-dark);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.navigation__toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24rem;
+  height: 24rem;
+  clip-path: circle();
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 600ms;
+  background-color: var(--clr-yellow);
+  z-index: 4;
+}
+
+.navigation__toggle--rotate {
+  transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+}
+
+.navigation__btn-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.btn--navigation {
+  position: absolute;
+  background: none;
+  transition: transform 250ms;
+}
+
+.btn--navigation--open {
+  bottom: 25%;
+  right: 25%;
+}
+
+.btn--navigation--close {
+  top: 25%;
+  left: 25%;
+}
+
+.btn--navigation--open:active {
+  transform: scale(0.9);
+}
+
+.btn--navigation--close:active {
+  transform: scale(0.9);
+}
+
+.navigation__icon {
+  width: 28px;
+  height: 28px;
+  stroke: var(--clr-dark-2);
+  stroke-width: 2px;
+  fill: none;
+}
+
+.navigation__menu {
+  position: absolute;
+  top: 40rem;
+  left: 4rem;
+  z-index: 2;
+  transform: translateX(0);
+  transition: transform 400ms;
+}
+
+.navigation__menu ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 2.4rem;
+}
+
+.navigation__menu--hidden {
+  transform: translateX(-200%);
+}
+
+.navigation__menu ul li a {
+  font-size: 1.8rem;
+  color: var(--clr-light);
+}
+
+.navigation__menu ul li a:link,
+.navigation__menu ul li a:link:visited {
+  text-decoration: none;
+}
+
+/* BLOG POST */
+
+.rotating__blog-post {
+  transform-origin: top left;
+  transform: rotate(0deg);
+  transition: transform 600ms;
+  background-color: #fff;
+  position: relative;
+  padding-top: 10.4rem;
+  padding-bottom: var(--space-800);
+  z-index: 3;
+}
+
+.rotating__blog-post--rotate {
+  transform-origin: top left;
+  transform: rotate(-20deg);
+}
+
+/* .blog-post__inner {
+  margin-left: 30px;
+} */
+
+.blog-post__inner figure {
   max-width: 800px;
   object-fit: cover;
   box-shadow: var(--shadow-300);
 }
 
-.rotating__blog-post figure img {
+.blog-post__inner figure img {
   width: 100%;
   height: 100%;
   border-radius: var(--border-radius-l);

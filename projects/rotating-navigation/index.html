@@ -23,7 +23,7 @@
     <title>Rotating Navigation</title>
   </head>
   <body>
-    <header class="header margin-xl">
+    <header class="header">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -44,59 +44,106 @@
       </div>
     </header>
     <main>
-      <section class="section--rotating-navigation padding-l margin-xl">
-        <div class="rotating__navigation"></div>
-        <div class="rotating__blog-post container-800 container-centered">
-          <h2 class="h2 margin-xs text-centered">Rotating Navigation</h2>
-          <p class="p text-centered margin-m">
-            Click on the menu button at the top left corner to reveal the
-            navigation.
-          </p>
-          <figure class="container-centered margin-l">
-            <img src="beautiful cat.jpg" alt="A Black Cat" />
-          </figure>
-          <p class="p margin-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            aut quis deleniti labore repellendus, dolores dolore possimus
-            quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
-            repudiandae optio quam.
-          </p>
+      <section>
+        <div class="navigation__toggle">
+          <div class="navigation__btn-container">
+            <button class="btn--navigation btn--navigation--close">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="navigation__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <button class="btn--navigation btn--navigation--open">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="navigation__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="navigation__menu navigation__menu--hidden">
+          <nav>
+            <ul>
+              <li><a href="../../">Home</a></li>
+              <li><a href="https://github.com">GitHub</a></li>
+              <li><a href="https://git.com">GIT Docs</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="navigation__background"></div>
+        <div class="rotating__blog-post padding-m">
+          <div class="blog-post__inner container-800">
+            <h2 class="h2 margin-xs text-centered">Rotating Navigation</h2>
+            <p class="p text-centered margin-m">
+              Click on the menu button at the top left corner to reveal the
+              navigation.
+            </p>
+            <figure class="container-centered margin-l">
+              <img src="beautiful cat.jpg" alt="A Black Cat" />
+            </figure>
+            <p class="p margin-s">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              aut quis deleniti labore repellendus, dolores dolore possimus
+              quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
+              repudiandae optio quam.
+            </p>
 
-          <p class="p margin-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            aut quis deleniti labore repellendus, dolores dolore possimus
-            quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
-            repudiandae optio quam.
-          </p>
+            <p class="p margin-s">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              aut quis deleniti labore repellendus, dolores dolore possimus
+              quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
+              repudiandae optio quam.
+            </p>
 
-          <p class="p margin-m">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            aut quis deleniti labore repellendus, dolores dolore possimus
-            quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
-            repudiandae optio quam.
-          </p>
-          <h2 class="h2 margin-s">Lorem ipsum dolor sit.</h2>
-          <p class="p margin-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            aut quis deleniti labore repellendus, dolores dolore possimus
-            quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
-            repudiandae optio quam. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Ullam quisquam magnam autem, odio magni earum
-            eveniet quod dignissimos quae in, minus deleniti, ducimus corporis
-            maiores accusantium dolores inventore esse tempora.
-          </p>
-          <p class="p margin-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            aut quis deleniti labore repellendus, dolores dolore possimus
-            quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
-            repudiandae optio quam.
-          </p>
-          <p class="p margin-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            aut quis deleniti labore repellendus, dolores dolore possimus
-            quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
-            repudiandae optio quam.
-          </p>
+            <p class="p margin-m">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              aut quis deleniti labore repellendus, dolores dolore possimus
+              quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
+              repudiandae optio quam.
+            </p>
+            <h2 class="h2 margin-s">Lorem ipsum dolor sit.</h2>
+            <p class="p margin-s">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              aut quis deleniti labore repellendus, dolores dolore possimus
+              quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
+              repudiandae optio quam. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Ullam quisquam magnam autem, odio magni earum
+              eveniet quod dignissimos quae in, minus deleniti, ducimus corporis
+              maiores accusantium dolores inventore esse tempora.
+            </p>
+            <p class="p margin-s">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              aut quis deleniti labore repellendus, dolores dolore possimus
+              quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
+              repudiandae optio quam.
+            </p>
+            <p class="p">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              aut quis deleniti labore repellendus, dolores dolore possimus
+              quaerat nesciunt ad nostrum totam aliquam eos hic, odio, corporis
+              repudiandae optio quam.
+            </p>
+          </div>
         </div>
       </section>
     </main>
