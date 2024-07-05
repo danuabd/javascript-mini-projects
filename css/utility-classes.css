@@ -128,6 +128,10 @@
   font-size: clamp(var(--fs-medium), 3.385vw, var(--fs-xl));
 }
 
+.h3 {
+  font-size: clamp(var(--fs-medium), 3.385vw, var(--fs-large));
+}
+
 .p {
   font-size: 1.6rem;
   line-height: 1.6;

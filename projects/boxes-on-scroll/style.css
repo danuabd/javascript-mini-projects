@@ -1,0 +1,51 @@
+main {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.boxes__box {
+  max-width: 40rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-2);
+  border: 2px solid var(--clr-gray-2);
+  border-radius: var(--border-radius-l);
+  padding: 1.8rem 3.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4.4rem;
+  transition: transform 600ms;
+}
+
+.box--moving-right {
+  transform: translateX(-1000px);
+  animation-name: moveToRight;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+}
+
+.box--moving-left {
+  transform: translateX(-1000px);
+  animation-name: moveToLeft;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveToRight {
+  0% {
+    transform: translateX(-1000px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveToLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-1000px);
+  }
+}
