@@ -32,7 +32,7 @@ section {
   transform: translateX(-50%) translateY(-50%);
   transition: transform 600ms;
   background-color: var(--clr-yellow);
-  z-index: 4;
+  z-index: 3;
 }
 
 .navigation__toggle--rotate {
@@ -117,7 +117,7 @@ section {
   position: relative;
   padding-top: 12rem;
   padding-bottom: var(--space-800);
-  z-index: 3;
+  z-index: 2;
 }
 
 .rotating__blog-post--rotate {
