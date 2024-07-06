@@ -13,3 +13,19 @@ const box = `<div class="boxes__box
                quas voluptatibus!
               </p>
             </div>`;
+
+// hold values to compare scroll positions
+let previous = 0;
+let present;
+
+// check if scrolling up or down
+window.addEventListener("scroll", function (e) {
+  present = document.documentElement.scrollTop.toFixed(0);
+
+  const change = present - previous;
+
+  if (change > 0) console.log("down");
+  if (change < 0) console.log("up");
+
+  previous = present;
+});
