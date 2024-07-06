@@ -1,0 +1,84 @@
+main {
+  min-height: 100vh;
+}
+
+.landing-page {
+  display: flex;
+  justify-content: center;
+  height: 60rem;
+  position: relative;
+}
+
+.landing-page h2 {
+  font-size: 5.6rem;
+  color: var(--clr-light);
+}
+
+.btn--resize {
+  position: absolute;
+  top: 70%;
+  font-size: 3.2rem;
+  padding: 1.6rem 3.2rem;
+  background-color: transparent;
+  color: var(--clr-light);
+  border: 3px solid var(--clr-light);
+  border-radius: var(--border-radius-m);
+  transition: background-color 300ms, color 300ms;
+}
+
+.btn--resize:hover {
+  background-color: var(--clr-light);
+  color: var(--clr-dark-2);
+  animation-name: resizeAnimation;
+  animation-duration: 1s;
+}
+
+.landing-page__left,
+.landing-page__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.6rem;
+  transition: flex-grow 1000ms, flex-basis 1000ms;
+}
+
+.landing-page__left {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("img/cat-in-dark.jpg");
+  background-size: cover;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.landing-page__right {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("img/dog-in-light.jpg");
+  background-size: cover;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+/* Animation */
+
+.grow {
+  flex-basis: 70%;
+}
+
+/* resize button animation */
+@keyframes resizeAnimation {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+
+  20%,
+  60% {
+    transform: translate(-10%);
+  }
+
+  40%,
+  80% {
+    transform: translate(10%);
+  }
+}
