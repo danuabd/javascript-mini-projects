@@ -4,7 +4,179 @@ const form = document.querySelector(".form");
 const labels = document.getElementsByClassName("form__label");
 const inputEmail = document.querySelector("#email");
 const inputPW = document.querySelector("#password");
-const step = 20;
+
+/**
+ * Create a class to add the common functionalities
+ */
+class InputField {
+  #delay = 0;
+  #step = 20;
+
+  constructor(labelEl, inputEl) {
+    this.label = labelEl;
+    this.input = inputEl;
+
+    // properties derived from inputs
+    this.labelLength = this.label.textContent.length;
+
+    this.labelCharacters = [...this.label.textContent];
+
+    // properties not based on user inputs
+    this.labelCharacterElements = [...this.updateLabel()];
+  }
+
+  // Turn text into characters and replace the original with them
+  updateLabel() {
+    this.label.innerHTML = "";
+    this.labelCharacters.forEach((char) => {
+      if (char !== " ") {
+        this.label.insertAdjacentHTML("beforeend", `<span>${char}</span>`);
+      } else {
+        // add a css class to empty elements to add some space
+        this.label.insertAdjacentHTML(
+          "beforeend",
+          `<span class="space">${char}</span>`
+        );
+      }
+    });
+
+    // return the added children so we can save it to a variable
+    return this.label.children;
+  }
+
+  // Add animation to characters
+  addAnimation() {
+    // add a className to the label
+    this.label.className = "form__label forward";
+    this.labelCharacterElements.forEach((char) => {
+      char.style.animation = `${this.labelLength * this.#step}ms ease-in ${
+        this.#delay
+      }ms 1 normal forwards running charAnimateForward`;
+      this.#delay += this.#step;
+    });
+    // reset the delay
+    this.#delay = 0;
+  }
+
+  // Remove character animations
+  removeAnimation() {
+    // add a className to the label
+    this.label.className = "form__label backward";
+    this.labelCharacterElements.forEach((char) => {
+      char.style.animation = `${this.labelLength * this.#step}ms ease-in ${
+        this.#delay
+      }ms 1 normal backwards running charAnimateBackward`;
+      this.#delay += this.#step;
+    });
+    // reset the delay
+    this.#delay = 0;
+  }
+
+  // Add the backward animation when there is no input
+  removeAnimationConditionally() {
+    if (this.hasForwardAnimation && !this.hasInput) this.removeAnimation();
+  }
+
+  // clear the input and apply backward animation
+  clearInputs() {
+    this.input.value = "";
+    this.removeAnimation();
+  }
+
+  // check input
+  get hasInput() {
+    return this.input.value;
+  }
+
+  // check forward Animation
+  get hasForwardAnimation() {
+    return this.label.classList.contains("forward");
+  }
+
+  // check forward Animation
+  get hasBackwardAnimation() {
+    return this.label.classList.contains("forward");
+  }
+}
+
+// create Class INSTANCES
+const emailField = new InputField(labels[0], inputEmail);
+
+const passwordField = new InputField(labels[1], inputPW);
+
+// Event handler for form submission
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // clear inputs
+  emailField.clearInputs();
+  passwordField.clearInputs();
+});
+
+// Event handler for click events
+document.body.addEventListener("click", function (e) {
+  //   e.preventDefault();
+  const origin = e.target;
+  const container = origin.closest(".form__input-container");
+
+  if (!container) {
+    // check if email has animation and then is no input => remove animation
+    emailField.removeAnimationConditionally();
+
+    // check if password has animation and there is no inputs => remove animation
+    passwordField.removeAnimationConditionally();
+
+    return;
+  }
+
+  const inputType = container.querySelector(".form__input");
+
+  // apply the forward animation
+  if (inputType === inputEmail) emailField.addAnimation();
+
+  if (inputType === inputPW) passwordField.addAnimation();
+});
+
+/**
+ * Event handlers for focus events
+ */
+inputEmail.addEventListener("focus", function () {
+  // if the element doesn't have an animation, add it
+  if (!emailField.hasForwardAnimation) {
+    emailField.addAnimation();
+  }
+
+  // check if password has animation and then is no input => remove animation
+  passwordField.removeAnimationConditionally();
+});
+
+inputPW.addEventListener("focus", function () {
+  // if the element doesn't have an animation, add it
+  if (!passwordField.hasForwardAnimation) {
+    passwordField.addAnimation();
+  }
+
+  // check if email has animation and then is no input => remove animation
+  emailField.removeAnimationConditionally();
+});
+
+/**
+ * Event handlers for change events
+ */
+inputEmail.addEventListener("input", function () {
+  // if there is no input, remove the animation
+  if (!emailField.hasInput) emailField.removeAnimation();
+  else emailField.addAnimation();
+});
+
+inputPW.addEventListener("input", function () {
+  // if there is no input, remove the animation
+  if (!passwordField.hasInput) passwordField.removeAnimation();
+  else passwordField.addAnimation();
+});
+
+/**OLD CODE
+ * const step = 20;
 let delay = 0;
 
 // take letters of label
@@ -36,6 +208,7 @@ function insertChar(el, arr) {
     }
   });
 
+  // return the added children so we can save it to a variable
   return el.children;
 }
 
@@ -66,76 +239,4 @@ function removeAnimation(charArr, arrLabel) {
   // reset the delay
   delay = 0;
 }
-
-// Event handler for form submission
-form.addEventListener("submit", (e) => e.preventDefault());
-
-// Event handler for click events
-document.body.addEventListener("click", function (e) {
-  //   e.preventDefault();
-  const origin = e.target;
-  const container = origin.closest(".form__input-container");
-
-  if (!container) {
-    // check if email has animation and then remove it
-    if (labelEmail.classList.contains("forward") && !inputEmail.value) {
-      removeAnimation(emailCharArr, labelEmail);
-    }
-
-    // check if password has animation and then remove it
-    if (labelPW.classList.contains("forward") && !inputPW.value) {
-      removeAnimation(PWCharArr, labelPW);
-    }
-
-    return;
-  }
-
-  const inputType = container.querySelector(".form__input");
-
-  // clear animations
-  // removeAnimation(emailCharArr);
-  // removeAnimation(PWCharArr);
-
-  // apply the animation with a delay for each
-  if (inputType === inputEmail) addAnimation(emailCharArr, labelEmail);
-
-  if (inputType === inputPW) addAnimation(PWCharArr, labelPW);
-});
-
-/**
- * Event handlers for focus events
  */
-inputEmail.addEventListener("focus", function (e) {
-  // if the element doesn't have an animation, add it
-  if (!labelEmail.classList.contains("forward")) {
-    addAnimation(emailCharArr, labelEmail);
-  }
-
-  if (labelPW.classList.contains("forward") && !checkInput(inputPW))
-    removeAnimation(PWCharArr, labelPW);
-});
-
-inputPW.addEventListener("focus", function (e) {
-  // if the element doesn't have an animation, add it
-  if (!labelPW.classList.contains("forward")) {
-    addAnimation(PWCharArr, labelPW);
-  }
-
-  if (labelEmail.classList.contains("forward") && !checkInput(inputEmail))
-    removeAnimation(emailCharArr, labelEmail);
-});
-
-/**
- * Event handlers for change events
- */
-inputEmail.addEventListener("input", function (e) {
-  // if there is no input, remove the animation
-  if (!checkInput(inputEmail)) removeAnimation(emailCharArr, labelEmail);
-  else addAnimation(emailCharArr, labelEmail);
-});
-
-inputPW.addEventListener("input", function (e) {
-  // if there is no input, remove the animation
-  if (!checkInput(inputPW)) removeAnimation(PWCharArr, labelPW);
-  else addAnimation(PWCharArr, labelPW);
-});
