@@ -45,11 +45,11 @@
     </header>
     <main>
       <h2 class="h2 text-centered margin-xs">Sound Board</h2>
-      <p class="p text-centered margin-m">
+      <p class="p text-centered margin-l">
         Each button below will play a sound when clicked.
       </p>
       <section class="padding-m">
-        <div class="sound-board">
+        <div class="sound-board margin-l">
           <button class="sound-board__btn btn--rain">Rain 🌧️</button
           ><button class="sound-board__btn btn--thunder">Thunder ⚡</button
           ><button class="sound-board__btn btn--storm">Storm 🍃</button
@@ -57,6 +57,19 @@
           ><button class="sound-board__btn btn--tree-fall">
             Tree Falling 🌴
           </button>
+        </div>
+        <div class="volume-controller">
+          <label class="volume__label" for="volume">Adjust Volume</label>
+          <input
+            class="volume__input"
+            type="range"
+            name="volume"
+            id="volume"
+            min="0"
+            max="1"
+            value="0.5"
+            step="0.1"
+          />
         </div>
       </section>
     </main>
