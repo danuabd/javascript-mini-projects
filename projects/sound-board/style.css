@@ -1,0 +1,36 @@
+main {
+  min-height: 100vh;
+  background-color: var(--clr-yellow);
+  padding: 5.6rem 0;
+}
+
+.sound-board {
+  max-width: 80rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sound-board__btn {
+  position: relative;
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.8rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-2);
+  border: 3px solid var(--clr-light);
+  border-radius: var(--border-radius-m);
+  transition: transform 400ms;
+}
+
+.sound-board__btn:hover {
+  transform: scale(1.1);
+}
+
+.sound-board__btn:active {
+  transform: scale(1);
+}
