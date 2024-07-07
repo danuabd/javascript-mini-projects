@@ -1,0 +1,134 @@
+.form {
+  max-width: 360px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5.6rem;
+  box-shadow: var(--shadow-200);
+  border: 2px solid var(--clr-gray-2);
+  border-radius: var(--border-radius-l);
+  padding: 0 1.6rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.form__input-container {
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1.4rem;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.form__input {
+  font-size: 1.6rem;
+}
+
+.form__label {
+  position: absolute;
+  top: -3px;
+  color: var(--clr-dark);
+  font-size: 1.8rem;
+  font-weight: 500;
+  opacity: 0.7;
+  padding-left: 1rem;
+  z-index: 1;
+}
+
+.form__label span {
+  display: inline-block;
+}
+
+.form__label span.space {
+  margin-right: 6px;
+}
+
+.form__input {
+  width: 100%;
+  position: relative;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  border-bottom: 3px solid var(--clr-gray-2);
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.form__submit {
+  width: 80%;
+  font-size: 1.6rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  border: 2px solid var(--clr-gray-2);
+  border-radius: var(--border-radius-m);
+  padding: 1.2rem 3.6rem;
+}
+
+.char--clicked {
+  opacity: 0.8;
+}
+
+@keyframes charAnimateForward {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(10px);
+  }
+
+  90% {
+    transform: translateY(-40px);
+  }
+
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes charAnimateBackward {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  10% {
+    transform: translateY(-40px);
+  }
+
+  90% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 425px) {
+  .form {
+    height: 360px;
+    gap: 4.4rem;
+  }
+
+  .form h2 {
+    margin-bottom: 0;
+  }
+
+  .form__label {
+    font-size: 1.7rem;
+  }
+}
