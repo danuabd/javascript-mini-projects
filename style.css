@@ -1,21 +1,20 @@
 /* SECTION -- About author */
-
-.section--about-author {
+.about-author-container {
   max-width: 80rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: clamp(6.4rem, 9.6vw, 9.6rem);
+  gap: 2.4rem;
   border: 2px solid var(--clr-gray-2);
-  border-radius: 1.2rem;
+  border-radius: 12px;
   box-shadow: var(--shadow-100);
   margin-left: auto;
   margin-right: auto;
-  padding: 3.6rem;
+  padding: 2.8rem;
 }
 
 .about-author {
-  max-width: 50%;
+  max-width: 58%;
 }
 
 .aa__heading {
@@ -86,7 +85,7 @@
   line-height: 1.5;
   color: var(--clr-light);
   background-color: var(--clr-dark-3);
-  padding: var(--space-500) 0;
+  padding: var(--space-600) 0;
 }
 
 .mini-projects__heading .mini-project-count {
