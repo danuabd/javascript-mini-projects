@@ -7,27 +7,36 @@ main {
 .dad-joke {
   position: relative;
   max-width: 80rem;
+  height: 22.917vw;
+  min-height: 30rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4.4rem;
-  background-color: #bef264;
+  gap: clamp(2.8rem, 8.889vw, 5.6rem);
+
+  color: var(--clr-dark-3);
+  background-color: var(--clr-green-2);
+
+  /* custom pattern */
+  /* custom pattern */
+
   border-radius: var(--border-radius-l);
   box-shadow: var(--shadow-200);
-  padding: 6.4rem 3.6rem 5.6rem 3.6rem;
+  padding: 2.4rem 4.4rem;
   margin-bottom: var(--space-xl);
 }
 
 .dad-joke__img {
   position: absolute;
-  max-width: 9rem;
+  max-width: clamp(5.6rem, 14.286vw, 9rem);
   height: auto;
   top: 0;
   right: 4.4rem;
   transform: translateY(-50%);
   transform-origin: bottom;
   cursor: pointer;
+  pointer-events: none;
 
   /* animation */
   animation-name: imgAnimate;
@@ -44,30 +53,29 @@ main {
 .dad-joke__q {
   font-family: "Noto Sans JP", sans-serif;
   text-align: center;
-  font-size: 3.6rem;
+  font-size: clamp(2rem, 5.714vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -0.6px;
-  color: var(--clr-dark-2);
+  pointer-events: none;
 }
 
 .dad-joke__a {
   font-family: "Noto Sans JP", sans-serif;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 4.444vw, 2.8rem);
   font-weight: 400;
-  color: var(--clr-dark-2);
   filter: blur(0);
   cursor: pointer;
-  transition: filter 300ms;
+  transition: filter 200ms;
 }
 
-.dad-joke__a--hidden {
-  filter: blur(8px);
+.blurred {
+  filter: blur(6px);
 }
 
 .dad-joke__btn {
   display: block;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--clr-light-red);
   background-color: var(--clr-red-2);
@@ -89,6 +97,13 @@ main {
   box-shadow: none;
 }
 
+.counter {
+  font-size: 2.4rem;
+  font-weight: 800;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+}
+
 @keyframes imgAnimate {
   0% {
     transform: translateY(-50%) rotate(0deg);
@@ -108,5 +123,33 @@ main {
 
   100% {
     transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@keyframes counterAnimate {
+  0% {
+    color: var(--clr-green-2);
+  }
+
+  50% {
+    color: var(--clr-yellow);
+  }
+
+  100% {
+    color: var(--clr-light);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 375px) {
+  .dad-joke__btn {
+    font-size: 1.8rem;
+    padding: 1.6rem 3.2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .dad-joke {
+    min-height: 26rem;
   }
 }
