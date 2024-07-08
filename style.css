@@ -66,12 +66,6 @@
 
 /* SECTION -- Project Description */
 
-.section--project-description {
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .pd__heading {
   text-align: center;
 }
@@ -89,6 +83,7 @@
 .mini-projects__heading {
   text-align: center;
   letter-spacing: 1px;
+  line-height: 1.5;
   color: var(--clr-light);
   background-color: var(--clr-dark-3);
   padding: var(--space-500) 0;
@@ -100,7 +95,7 @@
 
 .mini-projects__list ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(246px, 1fr));
   justify-content: center;
   align-items: center;
   column-gap: var(--space-xl);
@@ -115,12 +110,13 @@
   font-weight: 500;
   color: var(--clr-dark-2);
   background-color: #fff;
-  border: 2px solid var(--clr-green-2);
+  border: 2px solid var(--clr-gray-2);
   border-radius: var(--border-radius-m);
   box-shadow: var(--shadow-100);
-  padding: 1.4rem 1.2rem 1.4rem 5.2rem;
+  padding: 1.4rem 1rem 1.4rem 5.2rem;
   transition: box-shadow 300ms;
   cursor: pointer;
+  pointer-events: visible;
 }
 
 .mini-project:hover {
@@ -142,10 +138,13 @@
   justify-content: center;
   text-align: center;
   font-weight: 600;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-3);
   border-top-left-radius: var(--border-radius-s);
   border-bottom-left-radius: var(--border-radius-s);
-  background-color: var(--clr-green-2);
-  right: 0;
+  border-radius: var(--border-radius-s);
+  box-shadow: var(--shadow-100);
+  pointer-events: none;
 }
 
 .mini-project a {

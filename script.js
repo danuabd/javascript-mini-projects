@@ -14,3 +14,12 @@ pdImageOriginal.addEventListener("load", function (e) {
 });
 
 projectCount.textContent = projectList.querySelectorAll("li").length;
+
+document.querySelectorAll(".mini-project").forEach(function (item) {
+  item.addEventListener("click", function () {
+    const link = this.querySelector("a");
+    if (link) {
+      window.location.href = link.href;
+    }
+  });
+});

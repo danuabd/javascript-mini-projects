@@ -4,6 +4,10 @@ main {
   min-height: 100vh;
 }
 
+.p {
+  font-size: 2rem;
+}
+
 .dad-joke {
   position: relative;
   max-width: 80rem;
