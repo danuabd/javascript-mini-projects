@@ -44,7 +44,7 @@
     margin-bottom: var(--space-900);
   }
 
-  .section--about-author {
+  .about-author-container {
     flex-direction: column;
     gap: var(--space-750);
   }
