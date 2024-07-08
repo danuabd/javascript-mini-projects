@@ -6,6 +6,8 @@
   --clr-yellow: #ffea00;
   --clr-green: #16a34a;
   --clr-red: #dc2626;
+  --clr-red-2: #ef4444;
+  --clr-light-red: #fef2f2;
 
   /* COLORS ADDED LATER */
   --clr-gray-2: #e2e8f0;
@@ -125,7 +127,7 @@
 }
 
 .h2 {
-  font-size: clamp(var(--fs-medium), 3.385vw, var(--fs-xl));
+  font-size: clamp(var(--fs-xl), 3.385vw, var(--fs-2xl));
 }
 
 .h3 {

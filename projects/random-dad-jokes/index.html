@@ -23,7 +23,7 @@
     <title>Random Dad Jokes</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header margin-l">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -46,8 +46,22 @@
     <main>
       <h2 class="h2 text-centered margin-xs">Random Dad Jokes</h2>
       <p class="p text-centered margin-l">
-        Click on the <strong>Blurred</strong> area to see the answer!
+        Click on the <strong>Blurred</strong> area to reveal the answer!
       </p>
+      <section class="section--dad-jokes padding-l">
+        <div class="dad-joke container-centered">
+          <picture class="dad-joke__img"
+            ><img src="dad-joke-emoji.png" alt="Dad Joke Emoji"
+          /></picture>
+          <p class="dad-joke__q">
+            Where did people hang out during medieval times?
+          </p>
+          <p class="dad-joke__a">At night clubs</p>
+        </div>
+        <button class="dad-joke__btn">
+          Next Joke in <span class="counter">5</span>s
+        </button>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__box--1">

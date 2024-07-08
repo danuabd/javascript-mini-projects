@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+
+main {
+  min-height: 100vh;
+}
+
+.dad-joke {
+  position: relative;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4.4rem;
+  background-color: #bef264;
+  border-radius: var(--border-radius-l);
+  box-shadow: var(--shadow-200);
+  padding: 6.4rem 3.6rem 5.6rem 3.6rem;
+  margin-bottom: var(--space-xl);
+}
+
+.dad-joke__img {
+  position: absolute;
+  max-width: 9rem;
+  height: auto;
+  top: 0;
+  right: 4.4rem;
+  transform: translateY(-50%);
+  transform-origin: bottom;
+  cursor: pointer;
+
+  /* animation */
+  animation-name: imgAnimate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.dad-joke__img img {
+  width: 100%;
+  height: auto;
+}
+
+.dad-joke__q {
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  color: var(--clr-dark-2);
+}
+
+.dad-joke__a {
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--clr-dark-2);
+  filter: blur(0);
+  cursor: pointer;
+  transition: filter 300ms;
+}
+
+.dad-joke__a--hidden {
+  filter: blur(8px);
+}
+
+.dad-joke__btn {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--clr-light-red);
+  background-color: var(--clr-red-2);
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow-300);
+  padding: 2rem 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: opacity 200ms, transform 200ms, box-shadow 200ms;
+}
+
+.dad-joke__btn:hover {
+  opacity: 0.9;
+}
+
+.dad-joke__btn:active {
+  opacity: 1;
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+@keyframes imgAnimate {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-50%) rotate(15deg);
+  }
+
+  50% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(-50%) rotate(-15deg);
+  }
+
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
