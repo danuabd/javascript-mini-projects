@@ -18,7 +18,7 @@
 
 .logo__img {
   max-width: clamp(5rem, 7.682vw, 6rem);
-  height: "auto";
+  height: auto;
 }
 
 .logo__text {
