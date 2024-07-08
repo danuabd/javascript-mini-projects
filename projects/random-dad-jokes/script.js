@@ -25,8 +25,8 @@ const hideAnswer = function () {
 };
 
 const resetTimeLeft = function () {
-  nextJokeIn = 4;
-  timeLeft.textContent = 5;
+  nextJokeIn = 7;
+  timeLeft.textContent = 8;
 };
 
 // render the constructed joke
