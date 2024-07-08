@@ -2,6 +2,8 @@
 
 A collection of small JavaScript projects, inspired by the '40 JavaScript Projects for Beginners' blog post from freeCodeCamp.
 
+> Preview URL: [JS Mini Projects Collection](https://danuabd.github.io/javascript-mini-projects/)
+
 ## Projects
 
 - **Color Flipper**
@@ -21,6 +23,14 @@ A collection of small JavaScript projects, inspired by the '40 JavaScript Projec
 - **Currency Converter**
 - **Expanding Cards**
 - **Step Progress Bar**
+- **Expanding Search Bar**
+- **Rotating Navigation**
+- **Blurry Page Loading**
+- **Boxes on Scroll**
+- **Split Landing Page**
+- **Form Field Label Animation**
+- **Sound Board**
+- **Random Dad Jokes**
 
 ## Getting Started
 
