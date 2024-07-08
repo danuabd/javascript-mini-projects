@@ -1,10 +1,17 @@
 /* SECTION -- About author */
 
 .section--about-author {
+  max-width: 80rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: clamp(6.4rem, 9.6vw, 9.6rem);
+  border: 2px solid var(--clr-gray-2);
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow-100);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3.6rem;
 }
 
 .about-author {
@@ -83,7 +90,7 @@
   text-align: center;
   letter-spacing: 1px;
   color: var(--clr-light);
-  background-color: var(--clr-dark);
+  background-color: var(--clr-dark-3);
   padding: var(--space-500) 0;
 }
 
@@ -93,41 +100,52 @@
 
 .mini-projects__list ul {
   display: grid;
-  grid-template-columns: max-content max-content max-content max-content;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   justify-content: center;
   align-items: center;
-  column-gap: var(--space-2xl);
+  column-gap: var(--space-xl);
   row-gap: var(--space-900);
-  list-style-position: inside;
+  list-style: none;
   margin: 0 auto;
 }
 
 .mini-project {
   position: relative;
   font-size: clamp(1.6rem, 0.233vw, 1.8rem);
+  font-weight: 500;
+  color: var(--clr-dark-2);
+  background-color: #fff;
+  border: 2px solid var(--clr-green-2);
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow-100);
+  padding: 1.4rem 1.2rem 1.4rem 5.2rem;
+  transition: box-shadow 300ms;
   cursor: pointer;
-  padding: 8px 16px;
-  z-index: 1;
 }
 
-.mini-project::after {
+.mini-project:hover {
+  box-shadow: var(--shadow-200);
+}
+
+.mini-project:active {
+  box-shadow: var(--shadow-100);
+}
+
+.mini-project__num {
   position: absolute;
   top: 0;
   left: 0;
+  height: calc(100%);
+  width: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  border-top-left-radius: var(--border-radius-s);
+  border-bottom-left-radius: var(--border-radius-s);
+  background-color: var(--clr-green-2);
   right: 0;
-  bottom: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  transform: skew(0deg);
-  transition: background-color 200ms, transform 200ms;
-  cursor: pointer;
-  z-index: -1;
-}
-
-.mini-project:hover::after {
-  background-color: var(--clr-yellow);
-  transform: skew(-20deg);
 }
 
 .mini-project a {
@@ -140,7 +158,7 @@
 }
 
 /* RESPONSIVE */
-
+/* 
 @media (max-width: 1350px) {
   .mini-projects__list ul {
     grid-template-columns: max-content max-content max-content;
@@ -206,4 +224,4 @@
     justify-content: center;
     align-items: self-start;
   }
-}
+} */
