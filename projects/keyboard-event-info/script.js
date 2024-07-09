@@ -85,6 +85,8 @@ const storeEventInfo = function (e) {
 
 // event handler
 window.addEventListener("keydown", function (e) {
+  e.preventDefault();
+
   if (isDesktop()) {
     // remove the overlay
     overlay.style.display = "none";
@@ -96,7 +98,8 @@ window.addEventListener("keydown", function (e) {
 });
 
 // to alert the user (toggle off)
-window.addEventListener("keyup", function () {
+window.addEventListener("keyup", function (e) {
+  e.preventDefault();
   if (isDesktop()) {
     alertUser();
 
