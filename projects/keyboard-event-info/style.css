@@ -1,0 +1,100 @@
+main {
+  min-height: 100vh;
+}
+
+.section--keyboard-event-info {
+  position: relative;
+}
+
+.keyboard-event-info {
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: stretch;
+  justify-items: stretch;
+  gap: 4.4rem;
+  border: 2px solid var(--clr-gray-2);
+  border-radius: var(--border-radius-l);
+  padding: 4.4rem;
+
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+}
+
+.event-info--pressed {
+  animation-name: keyboardEventInfoAnimation;
+}
+
+.event-info__box {
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 2px solid var(--clr-gray-2);
+  border-radius: var(--border-radius-m);
+  padding: 2rem 4rem;
+}
+
+.event-info__type {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.event-info__value {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-2);
+  border: 2px solid var(--clr-gray-2);
+  border-radius: var(--border-radius-m);
+  padding: 1.6rem;
+  transition: color 200ms, background-color 200ms;
+}
+
+.event__key {
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.key--active {
+  color: var(--clr-dark-2);
+  background-color: var(--clr-green-2);
+}
+
+.key--repeat {
+  background-color: var(--clr-red-2);
+  animation-name: keyRepeatAnimate;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes keyRepeatAnimate {
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    background-color: var(--clr-dark-2);
+  }
+
+  0%,
+  10%,
+  20%,
+  30%,
+  40%,
+  50% {
+    background-color: var(--clr-red-2);
+  }
+}
+
+@keyframes keyboardEventInfoAnimation {
+  0% {
+    border-color: var(--clr-red-2);
+  }
+
+  100% {
+    border-color: var(--clr-gray-2);
+  }
+}
