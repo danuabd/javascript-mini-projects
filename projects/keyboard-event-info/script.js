@@ -1,5 +1,8 @@
 "use strict";
 
+// get the overlay
+const overlay = document.querySelector(".overlay");
+
 // get the container
 const container = document.querySelector(".keyboard-event-info");
 
@@ -21,6 +24,23 @@ const elements = {
 
 // store event info
 const eventInfo = new Map();
+
+// detect mobile devices
+const isDesktop = function () {
+  if (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)
+  ) {
+    return false;
+  } else {
+    return true;
+  }
+};
 
 // change container border color to alert the user
 const alertUser = function () {
@@ -65,15 +85,22 @@ const storeEventInfo = function (e) {
 
 // event handler
 window.addEventListener("keydown", function (e) {
-  storeEventInfo(e);
-  alertUser();
-  displayEventInfo();
+  if (isDesktop()) {
+    // remove the overlay
+    overlay.style.display = "none";
+
+    storeEventInfo(e);
+    alertUser();
+    displayEventInfo();
+  }
 });
 
 // to alert the user (toggle off)
 window.addEventListener("keyup", function () {
-  alertUser();
+  if (isDesktop()) {
+    alertUser();
 
-  // remove repeat box animation
-  elements.repeat.classList.remove("key--repeat");
+    // remove repeat box animation
+    elements.repeat.classList.remove("key--repeat");
+  }
 });
