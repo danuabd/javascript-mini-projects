@@ -27,6 +27,12 @@ let currentIndex, previousChoice;
 const choice = document.createElement("button");
 choice.className = "choices__choice";
 
+// add bg color to all choices (reset all)
+const colorAllChoices = function () {
+  if (choices)
+    choices.forEach((choiceEl) => (choiceEl.className = "choices__choice"));
+};
+
 // clear the choices container
 const clearChoices = function () {
   choiceContainer.innerHTML = "";
@@ -66,11 +72,20 @@ const generateIndex = function () {
   randomIndex = Math.trunc(Math.random() * choices.length);
 };
 
+// only highlight the last choice
+const emphasizeFinalChoice = function () {
+  choices.forEach(
+    (choiceEl) =>
+      choiceEl === previousChoice || choiceEl.classList.add("choice--reject")
+  );
+};
+
 // animation function
 const animateChoices = function () {
   if (animationTime === 0) {
-    clearInterval(interval);
+    emphasizeFinalChoice();
     animationTime = definedTime;
+    clearInterval(interval);
     return;
   }
 
@@ -124,6 +139,7 @@ inputArea.addEventListener("keydown", function (e) {
     inputArea.blur();
 
     // start picking a choice
+    colorAllChoices();
     pickAChoice();
     startAnimateChoice();
   }
@@ -134,6 +150,7 @@ form.addEventListener("submit", function (e) {
   // when click the button button, add an animation
   e.preventDefault();
 
+  colorAllChoices();
   pickAChoice();
   startAnimateChoice();
   inputArea.blur();

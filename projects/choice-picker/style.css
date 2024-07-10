@@ -100,6 +100,16 @@ main {
   transition: background-color 200ms;
 }
 
+.choice--green {
+  color: var(--clr-dark-2);
+  background-color: var(--clr-green-2);
+}
+
 .choice--select {
   background-color: var(--clr-yellow);
+}
+
+.choice--reject {
+  color: var(--clr-dark-2);
+  background-color: var(--clr-gray-2);
 }
