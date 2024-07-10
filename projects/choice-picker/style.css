@@ -18,8 +18,27 @@ main {
   padding: 1rem 2rem;
 }
 
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .intro {
+    padding-top: 4.4rem;
+    padding-bottom: 5.6rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .intro {
+    padding-top: 4.4rem;
+    padding-bottom: 4.4rem;
+  }
+
+  .intro h2 {
+    margin-bottom: 2.4rem;
+  }
+}
+
 .choice-picker {
-  /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,13 +47,28 @@ main {
 
 .choice-picker__form {
   /* border: 2px solid blue; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3.6rem;
 }
 
+/* RESPONSIVE */
+@media (max-width: 425px) {
+  .choice-picker__form {
+    gap: 2.8rem;
+  }
+
+  .choice-picker {
+    gap: 3.6rem;
+  }
+}
+
 .form__input {
+  width: 100%;
+  height: 40vh;
+  min-height: 30rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,12 +76,13 @@ main {
 }
 
 .form__input label {
+  text-align: center;
   font-size: 1.6rem;
   color: var(--clr-dark-2);
 }
 
 #input--choices {
-  max-width: 80rem;
+  width: 100%;
   letter-spacing: 0.2px;
   line-height: 2.4rem;
   font-size: 1.6rem;
@@ -55,9 +90,10 @@ main {
   border: 2px solid var(--clr-gray-2);
   border-radius: var(--border-radius-s);
   outline: none;
-  resize: vertical;
+  resize: both;
   padding: 1.4rem;
   transition: border-color 300ms;
+  columns: 40;
 }
 
 #input--choices:active,
@@ -79,10 +115,11 @@ main {
 }
 
 .choices {
-  min-height: 20rem;
+  min-height: 10rem;
   display: flex;
   align-items: start;
   justify-content: start;
+  align-content: flex-start;
   flex-wrap: wrap;
   gap: 1.2rem;
   background-color: var(--clr-gray);
