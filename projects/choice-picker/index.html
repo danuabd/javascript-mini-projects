@@ -55,21 +55,30 @@
           >
         </p>
       </section>
-      <section class="padding-m">
-        <h2 class="h3 text-centered margin-xs">Add Your Choices Here</h2>
-        <p class="p text-centered">
+      <section
+        class="container-800 container-centered padding-m section--choice-picker"
+      >
+        <h2 class="choice-picker__heading h3 text-centered margin-xs">
+          Add Your Choices Here
+        </h2>
+        <p class="choice-picker__description p text-centered">
           Type all your choices separated by a comma <strong>","</strong>
         </p>
-        <form>
+        <form class="choice-picker__form">
           <textarea
             name="choice input area"
             id="input--choices"
             cols="30"
             rows="10"
             placeholder="Type choices separated by a comma"
+            required
           ></textarea>
-          <button>Pick a Choice For Me</button>
+          <button class="form__btn">Pick a Choice For Me</button>
         </form>
+        <div class="choice-picker__choices container-600 container-centered">
+          <button class="choices__choice">Eat</button>
+          <button class="choices__choice">Drink</button>
+        </div>
       </section>
     </main>
     <footer class="footer">
