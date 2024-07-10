@@ -44,16 +44,32 @@
       </div>
     </header>
     <main>
-      <section class="padding-m container-800 container-centered">
-        <h2 class="h2 text-centered margin-xs">Choice Picker</h2>
-        <p class="p text-centered margin-l">
-          This small application will pick a choice for you. All you have to do
-          is <strong>add your choices</strong> and
+      <section class="padding-m container-800 container-centered margin-xl">
+        <h2 class="h2 text-centered margin-s">Choice Picker</h2>
+        <p class="p text-centered">
+          This small application will pick a choice for you <em>Randomly</em>.
+          All you have to do is <strong>add your choices</strong> and
           <em
             >press the Enter button on your keyboard or click on the Start
             button!</em
           >
         </p>
+      </section>
+      <section class="padding-m">
+        <h2 class="h3 text-centered margin-xs">Add Your Choices Here</h2>
+        <p class="p text-centered">
+          Type all your choices separated by a comma <strong>","</strong>
+        </p>
+        <form>
+          <textarea
+            name="choice input area"
+            id="input--choices"
+            cols="30"
+            rows="10"
+            placeholder="Type choices separated by a comma"
+          ></textarea>
+          <button>Pick a Choice For Me</button>
+        </form>
       </section>
     </main>
     <footer class="footer">
