@@ -134,7 +134,7 @@ main {
   background-color: var(--clr-green-2);
   border-radius: var(--border-radius-l);
   padding: 6px 2rem;
-  transition: background-color 200ms;
+  transition: background-color 100ms, color 100ms;
 }
 
 .choice--green {
