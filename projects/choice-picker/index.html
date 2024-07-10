@@ -23,7 +23,7 @@
     <title>Choice Picker</title>
   </head>
   <body>
-    <header class="header margin-l">
+    <header class="header">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -44,40 +44,47 @@
       </div>
     </header>
     <main>
-      <section class="padding-m container-800 container-centered margin-xl">
-        <h2 class="h2 text-centered margin-s">Choice Picker</h2>
-        <p class="p text-centered">
-          This small application will pick a choice for you <em>Randomly</em>.
-          All you have to do is <strong>add your choices</strong> and
-          <em
-            >press the Enter button on your keyboard or click on the Start
-            button!</em
-          >
-        </p>
+      <section class="intro padding-m margin-l">
+        <div class="intro__content container-800 container-centered">
+          <h2 class="h2 text-centered margin-m">Choice Picker</h2>
+          <p class="p text-centered">
+            This small application will pick a choice for you <em>Randomly</em>.
+            All you have to do is <strong>add your choices</strong> and
+            <em
+              >press the Enter button on your keyboard or click on the Start
+              button!</em
+            >
+          </p>
+        </div>
       </section>
       <section
-        class="container-800 container-centered padding-m section--choice-picker"
+        class="choice-picker container-800 container-centered padding-m margin-l"
       >
-        <h2 class="choice-picker__heading h3 text-centered margin-xs">
-          Add Your Choices Here
-        </h2>
-        <p class="choice-picker__description p text-centered">
-          Type all your choices separated by a comma <strong>","</strong>
-        </p>
         <form class="choice-picker__form">
-          <textarea
-            name="choice input area"
-            id="input--choices"
-            cols="30"
-            rows="10"
-            placeholder="Type choices separated by a comma"
-            required
-          ></textarea>
+          <h2 class="form__heading h3 text-centered">Add Your Choices Here</h2>
+          <div class="form__input">
+            <label for="input--choices" class="form__label p"
+              >Type all your choices separated by a comma
+              <strong>","</strong></label
+            >
+            <textarea
+              name="choice input area"
+              id="input--choices"
+              cols="80"
+              rows="10"
+              placeholder="Type choices separated by a comma"
+              required
+            ></textarea>
+          </div>
           <button class="form__btn">Pick a Choice For Me</button>
         </form>
-        <div class="choice-picker__choices container-600 container-centered">
-          <button class="choices__choice">Eat</button>
-          <button class="choices__choice">Drink</button>
+
+        <div class="choice-picker__choices">
+          <p class="p text-centered margin-xs">Your Choices:</p>
+          <div class="choices container-600 container-centered">
+            <button class="choices__choice">Eat</button>
+            <button class="choices__choice">Drink</button>
+          </div>
         </div>
       </section>
     </main>
