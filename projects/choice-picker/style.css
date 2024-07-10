@@ -83,6 +83,7 @@ main {
   display: flex;
   align-items: start;
   justify-content: start;
+  flex-wrap: wrap;
   gap: 1.2rem;
   background-color: var(--clr-gray);
   border: 2px solid var(--clr-gray-2);
@@ -90,15 +91,15 @@ main {
   padding: 1.6rem;
 }
 
-.choice-picker__choices button {
+.choices__choice {
   font-size: 1.6rem;
   color: var(--clr-dark-2);
   background-color: var(--clr-green-2);
   border-radius: var(--border-radius-l);
   padding: 6px 2rem;
-  transition: background-color 250ms;
+  transition: background-color 200ms;
 }
 
 .choice--select {
-  background-color: var(--clr-green-2);
+  background-color: var(--clr-yellow);
 }

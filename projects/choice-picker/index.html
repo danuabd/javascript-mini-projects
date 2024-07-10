@@ -74,6 +74,9 @@
               rows="10"
               placeholder="Type choices separated by a comma"
               required
+              onpaste="return false;"
+              ondrop="return false;"
+              autocomplete="off"
             ></textarea>
           </div>
           <button class="form__btn">Pick a Choice For Me</button>
@@ -81,10 +84,7 @@
 
         <div class="choice-picker__choices">
           <p class="p text-centered margin-xs">Your Choices:</p>
-          <div class="choices container-600 container-centered">
-            <button class="choices__choice">Eat</button>
-            <button class="choices__choice">Drink</button>
-          </div>
+          <div class="choices container-600 container-centered"></div>
         </div>
       </section>
     </main>
