@@ -4,6 +4,8 @@ const choiceContainer = document.querySelector(".choices");
 const form = document.querySelector(".choice-picker__form");
 const inputArea = document.querySelector("#input--choices");
 const btnSubmit = document.querySelector(".form__btn");
+const choices = document.getElementsByClassName("choices__choice");
+let choiceList = [];
 
 // defined time
 const definedTime = 20;
@@ -12,7 +14,6 @@ const definedTime = 20;
 let animationTime = definedTime;
 
 // hold choices
-const choices = [];
 
 // hold interval
 let interval;
@@ -29,15 +30,16 @@ choice.className = "choices__choice";
 
 // add bg color to all choices (reset all)
 const colorAllChoices = function () {
-  if (choices)
-    choices.forEach((choiceEl) => (choiceEl.className = "choices__choice"));
+  // add elements to the array
+  choiceList = [...choices];
+
+  if (choiceList[0])
+    choiceList.forEach((choiceEl) => (choiceEl.className = "choices__choice"));
 };
 
 // clear the choices container
-const clearChoices = function () {
+const clearChoiceElements = function () {
   choiceContainer.innerHTML = "";
-  choices.length = 0;
-  animationTime = definedTime;
 };
 
 // when the user type comma render a button displaying the entered choice
@@ -47,34 +49,27 @@ const splitChoices = function (input) {
 };
 
 const addChoice = function (inputArr) {
-  // get the last element
-  const lastInput = inputArr[inputArr.length - 1].trim();
+  // clear any previously inserted choice elements
+  clearChoiceElements();
 
-  // input validation
-  if (lastInput) {
-    // clone the created choice el
-    const newChoice = choice.cloneNode();
-
-    // add the clone to dom
-    newChoice.textContent = lastInput;
-    choiceContainer.insertAdjacentElement("beforeend", newChoice);
-
-    // add to array
-    choices.push(newChoice);
-  }
-  //   log the invalid
-  else console.log("Invalid");
+  inputArr.forEach((input) => {
+    if (input.trim()) {
+      const newChoice = choice.cloneNode();
+      newChoice.textContent = input;
+      choiceContainer.insertAdjacentElement("beforeend", newChoice);
+    }
+  });
 };
 
 // generate an index for choice
 const generateIndex = function () {
   //   get the random number between 0 and arr.length
-  randomIndex = Math.trunc(Math.random() * choices.length);
+  randomIndex = Math.trunc(Math.random() * choiceList.length);
 };
 
 // only highlight the last choice
 const emphasizeFinalChoice = function () {
-  choices.forEach(
+  choiceList.forEach(
     (choiceEl) =>
       choiceEl === previousChoice || choiceEl.classList.add("choice--reject")
   );
@@ -117,13 +112,13 @@ const pickAChoice = function () {
   if (randomIndex === currentIndex) generateIndex();
   else currentIndex = randomIndex;
 
-  randomChoice = choices[randomIndex];
+  randomChoice = choiceList[randomIndex];
 };
 
 // event handler: input
 inputArea.addEventListener("input", function (e) {
   // clear the field when no inputs
-  if (!this.value.trim()) clearChoices();
+  if (!this.value.trim()) clearChoiceElements();
 
   // detect ","
   if (this.value[this.value.length - 1] === ",")
