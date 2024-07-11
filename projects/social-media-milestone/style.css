@@ -1,0 +1,39 @@
+main {
+  min-height: 100vh;
+}
+
+.intro {
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-3);
+}
+
+.intro h2 {
+  max-width: max-content;
+  color: var(--clr-dark-2);
+  background-color: var(--clr-yellow);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 2rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .intro {
+    padding-top: 4.4rem;
+    padding-bottom: 5.6rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .intro {
+    padding-top: 4.4rem;
+    padding-bottom: 4.4rem;
+  }
+
+  .intro h2 {
+    margin-bottom: 2.4rem;
+  }
+}
