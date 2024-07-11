@@ -37,3 +37,66 @@ main {
     margin-bottom: 2.4rem;
   }
 }
+
+.social-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.social-counter__box {
+  width: 220px;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  border-radius: var(--border-radius-m);
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  cursor: pointer;
+  transition: box-shadow 300ms;
+}
+
+.facebook {
+  background-color: #0866ff;
+  box-shadow: 0 10px 0 0 #0652cc;
+}
+
+.instagram {
+  background-color: #e1306c;
+  box-shadow: 0 10px 0 0 #b42656;
+}
+
+.youtube {
+  background-color: #ff0000;
+  box-shadow: 0 10px 0 0 #cc0000;
+}
+
+.counter__icon {
+  width: 5.2rem;
+  height: 5.2rem;
+  fill: #fff;
+}
+
+.counter__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.counter__count {
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.counter__name {
+  font-size: 1.6rem;
+  color: #fff;
+  text-transform: capitalize;
+}
