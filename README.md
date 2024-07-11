@@ -31,6 +31,8 @@ A collection of small JavaScript projects, inspired by the '40 JavaScript Projec
 - **Form Field Label Animation**
 - **Sound Board**
 - **Random Dad Jokes**
+- **Keyboard Event Info**
+- **Choice Picker**
 
 ## Getting Started
 
