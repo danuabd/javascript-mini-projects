@@ -7,14 +7,14 @@ main {
   display: none !important;
 }
 
-.h2 {
+.section--tabbed-component .h2 {
   text-align: center;
   font-size: clamp(2rem, 3.385vw, 2.8rem);
   color: var(--clr-dark);
   margin-bottom: 1.2rem;
 }
 
-.p {
+.section--tabbed-component .p {
   font-size: 1.6rem;
   color: var(--clr-dark);
   line-height: 1.6;
