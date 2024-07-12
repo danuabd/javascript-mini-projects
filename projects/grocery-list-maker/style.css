@@ -26,6 +26,12 @@
   transition-duration: 200ms;
 }
 
+/* INTRO */
+
+.project-intro .p {
+  color: var(--clr-light);
+}
+
 /* SECTION--Grocery list maker */
 
 .section--grocery-list-maker {
