@@ -179,6 +179,10 @@
   padding: 1rem 2rem;
 }
 
+.project-intro .p {
+  color: var(--clr-light);
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
