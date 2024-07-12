@@ -100,3 +100,82 @@ main {
   color: #fff;
   text-transform: capitalize;
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 680px) {
+  .social-counter__box {
+    width: 200px;
+    height: 205px;
+  }
+
+  .counter__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .counter__count {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 624px) {
+  .social-counter__box {
+    width: 180px;
+    height: 185px;
+  }
+
+  .counter__icon {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .counter__count {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .social-counter__box {
+    width: 160px;
+    height: 174px;
+    gap: 3.6rem;
+  }
+
+  .counter__icon {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .counter__count {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 496px) {
+  .social-counter {
+    gap: 1.8rem;
+  }
+  .social-counter__box {
+    width: 140px;
+    height: 150px;
+    gap: 3.2rem;
+    padding: 0;
+  }
+
+  .counter__icon {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .counter__count {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 446px) {
+  .social-counter {
+    gap: 2.4rem;
+    flex-wrap: wrap;
+  }
+}
