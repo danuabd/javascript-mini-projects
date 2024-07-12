@@ -3,10 +3,13 @@ main {
 }
 
 .landing-page {
+  max-width: 80rem;
   display: flex;
   justify-content: center;
   height: 60rem;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .landing-page h2 {
@@ -14,23 +17,32 @@ main {
   color: var(--clr-light);
 }
 
-.btn--resize {
-  position: absolute;
-  top: 70%;
-  font-size: 3.2rem;
-  padding: 1.6rem 3.2rem;
-  background-color: transparent;
-  color: var(--clr-light);
-  border: 3px solid var(--clr-light);
-  border-radius: var(--border-radius-m);
-  transition: background-color 300ms, color 300ms;
+.hidden {
+  display: none;
 }
 
-.btn--resize:hover {
-  background-color: var(--clr-light);
-  color: var(--clr-dark-2);
-  animation-name: resizeAnimation;
-  animation-duration: 1s;
+/* RESPONSIVE */
+
+@media (max-width: 680px) {
+  .landing-page h2 {
+    font-size: 4.4rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .landing-page h2 {
+    font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .active {
+    display: none;
+  }
+
+  .hidden {
+    display: block;
+  }
 }
 
 .landing-page__left,
@@ -63,22 +75,4 @@ main {
 
 .grow {
   flex-basis: 70%;
-}
-
-/* resize button animation */
-@keyframes resizeAnimation {
-  0%,
-  100% {
-    transform: translate(0);
-  }
-
-  20%,
-  60% {
-    transform: translate(-10%);
-  }
-
-  40%,
-  80% {
-    transform: translate(10%);
-  }
 }

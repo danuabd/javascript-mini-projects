@@ -23,7 +23,7 @@
     <title>Split Landing Page</title>
   </head>
   <body>
-    <header class="header margin-l">
+    <header class="header">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -44,19 +44,27 @@
       </div>
     </header>
     <main>
-      <h2 class="h2 text-centered margin-xs">Split Landing Page</h2>
-      <p class="p text-centered margin-m">
-        Hover the mouse to the section below.
-      </p>
-      <section class="section--split-landing-page margin-xs">
+      <section class="project-intro padding-m margin-l">
+        <div class="container-800 container-centered">
+          <h2 class="h2 text-centered margin-m">Split Landing Page</h2>
+          <p class="p text-centered">
+            The section you hover below will expand with a zoom effect.
+          </p>
+        </div>
+      </section>
+      <section class="section--split-landing-page margin-l">
         <div class="landing-page">
           <div class="landing-page__left page__part">
-            <h2 class="text-centered">Side Left</h2>
+            <h2 class="text-centered active">Side Left</h2>
+            <h2 class="text-centered hidden">Side <br />Left</h2>
           </div>
           <div class="landing-page__right page__part">
-            <h2 class="text-centered">Side Right</h2>
+            <h2 class="text-centered active">Side Right</h2>
+            <h2 class="text-centered hidden">
+              Side <br />
+              Right
+            </h2>
           </div>
-          <button class="btn--resize">Resize</button>
         </div>
       </section>
     </main>
