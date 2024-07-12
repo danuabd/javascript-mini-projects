@@ -1,7 +1,13 @@
 main {
   min-height: 100vh;
   background-color: var(--clr-yellow);
-  padding: 5.6rem 0;
+}
+
+.project-intro {
+  padding-top: 3.6rem;
+  padding-bottom: 3.2rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-3);
 }
 
 .sound-board {
@@ -24,16 +30,11 @@ main {
   background-color: var(--clr-dark-2);
   border: 3px solid var(--clr-light);
   border-radius: var(--border-radius-l);
-  transition: transform 400ms;
-}
-
-.sound-board__btn:hover {
-  transform: scale(1.1);
+  transition: transform 200ms;
 }
 
 .sound-board__btn:active {
-  transform: scale(1);
-  transition: transform 50ms;
+  transform: scale(0.9);
 }
 
 .sound-board__btn .progress {
