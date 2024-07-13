@@ -24,7 +24,7 @@
     <title>Counter</title>
   </head>
   <body>
-    <header class="header margin-l">
+    <header class="header">
       <div class="header__logo">
         <a href="../../index.html"
           ><img
@@ -45,14 +45,27 @@
       </div>
     </header>
     <main>
-      <div class="counter-container padding-l margin-l">
-        <div class="counter">0</div>
-        <div class="counter__control-btns">
-          <button class="btn--decrease border-radius-l">Decrease</button>
-          <button class="btn--reset border-radius-l">Reset</button>
-          <button class="btn--increase border-radius-l">Increase</button>
+      <section class="project-intro padding-m margin-l">
+        <div class="container-800 container-centered">
+          <h2 class="h2 text-centered margin-m">Number Counter</h2>
+          <p class="p text-centered">
+            This simple counter application will let you increase/decrease the
+            current value by 1 decimal. When the value is less than 0 it will
+            become <strong>Red</strong>, when it is greater than 0 it will
+            become <strong>green.</strong>
+          </p>
         </div>
-      </div>
+      </section>
+      <section class="section--number-counter">
+        <div class="counter-container padding-l margin-l">
+          <div class="counter">0</div>
+          <div class="counter__control-btns">
+            <button class="btn--decrease border-radius-l">Decrease</button>
+            <button class="btn--reset border-radius-l">Reset</button>
+            <button class="btn--increase border-radius-l">Increase</button>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__box--1">

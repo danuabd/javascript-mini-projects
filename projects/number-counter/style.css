@@ -1,9 +1,7 @@
 main {
   min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
 button {
   font-size: var(--fs-base);
   background-color: var(--clr-light);
@@ -15,6 +13,12 @@ button {
 
 button:hover {
   color: var(--clr-light);
+}
+
+.section--number-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .counter-container {
