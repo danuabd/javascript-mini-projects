@@ -8,6 +8,13 @@
   margin-right: auto;
 }
 
+/* RESPONSIVE */
+@media (max-width: 375px) {
+  .water-reminder__heading {
+    font-size: 2.4rem;
+  }
+}
+
 .water-reminder__bottle--cover {
   position: relative;
   width: 200px;
@@ -19,6 +26,33 @@
 }
 
 /* RESPONSIVE */
+@media (max-width: 768px) {
+  .water-reminder__bottle--cover {
+    width: 180px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 540px) {
+  .water-reminder__bottle--cover {
+    width: 170px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 425px) {
+  .water-reminder__bottle--cover {
+    width: 150px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 312px) {
+  .water-reminder__bottle--cover {
+    width: 120px;
+    height: 260px;
+  }
+}
 
 .water-reminder__bottle--fill {
   position: absolute;
@@ -39,6 +73,31 @@
   color: var(--clr-light);
 }
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .water-reminder__percentage {
+    font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .water-reminder__percentage {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .water-reminder__percentage {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 312px) {
+  .water-reminder__percentage {
+    font-size: 2.4rem;
+  }
+}
+
 .water-reminder__consumed-amount {
   position: absolute;
   top: 1.2rem;
@@ -48,6 +107,19 @@
   font-size: 3.6rem;
   font-weight: 600;
   color: #2563eb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .water-reminder__consumed-amount {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .water-reminder__consumed-amount {
+    font-size: 2.8rem;
+  }
 }
 
 .water-reminder__cups {
@@ -61,6 +133,25 @@
   margin-right: auto;
 }
 
+@media (max-width: 540px) {
+  .water-reminder__cups {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  .water-reminder__cups {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 312px) {
+  .water-reminder__cups {
+    row-gap: 4rem;
+    column-gap: 3.2rem;
+  }
+}
+
 .water-reminder__cup {
   position: relative;
   width: 6rem;
@@ -70,6 +161,14 @@
   border-bottom-right-radius: 30%;
   overflow: hidden;
   cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 312px) {
+  .water-reminder__cup {
+    width: 4rem;
+    height: 8rem;
+  }
 }
 
 .water-reminder__cup::after {
@@ -86,4 +185,11 @@
   font-weight: 500;
   color: var(--clr-light);
   background-color: #3b82f6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 312px) {
+  .water-reminder__cup::after {
+    font-size: 1.6rem;
+  }
 }
