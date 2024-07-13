@@ -1,52 +1,43 @@
 "use strict";
 
-const counterFacebook = document
-  .querySelector(".facebook")
-  .querySelector(".counter__count");
+const waterBucket = document.querySelector(".water-reminder__bottle--fill");
+const cups = document.querySelector(".water-reminder__cups");
+const consumedPercentage = document.querySelector(
+  ".water-reminder__percentage"
+);
+const consumedAmount = document.querySelector(
+  ".water-reminder__consumed-amount"
+);
 
-const counterInstagram = document
-  .querySelector(".instagram")
-  .querySelector(".counter__count");
+const goal = 2500;
+const cupWater = 250; // 250ml
+const heightPerCup = 100 / 10;
 
-const counterYoutube = document
-  .querySelector(".youtube")
-  .querySelector(".counter__count");
+// add a click event
+cups.addEventListener("click", function (e) {
+  if (!e.target.closest(".water-reminder__cup")) return;
+  const consumedCups = e.target.dataset.num;
 
-// Define followers/subscribers
-const countFacebook = 9150;
-const countInstagram = 2380;
-const countYoutube = 4864;
+  // fill the bucket
+  waterBucket.style.height = `${consumedCups * heightPerCup}%`;
 
-// completion time
-const timeToComplete = 340;
-let start = 0;
+  // update the percentage
+  consumedPercentage.textContent = `${consumedCups * heightPerCup}%`;
 
-// values to add
-const numToAddFacebook = Math.floor(countFacebook / timeToComplete);
-const numToAddInstagram = Math.floor(countInstagram / timeToComplete);
-const numToAddYoutube = Math.floor(countYoutube / timeToComplete);
+  // update the consumed amount
+  const consumedMl = consumedCups * cupWater;
 
-// reset values
-counterFacebook.textContent = 0;
-counterInstagram.textContent = 0;
-counterYoutube.textContent = 0;
-
-const increaseCount = function () {
-  if (start === timeToComplete) {
-    clearInterval(interval);
-    counterFacebook.textContent = countFacebook;
-    counterInstagram.textContent = countInstagram;
-    counterYoutube.textContent = countYoutube;
-    return;
+  if (consumedMl < 1000) {
+    consumedAmount.textContent = `${consumedCups * cupWater}ml`;
+  } else {
+    consumedAmount.textContent = `${((consumedCups * cupWater) / 1000).toFixed(
+      2
+    )}L`;
   }
-  counterFacebook.textContent = +counterFacebook.textContent + numToAddFacebook;
+});
 
-  counterInstagram.textContent =
-    +counterInstagram.textContent + numToAddInstagram;
+// get the cup number * 250 ml
 
-  counterYoutube.textContent = +counterYoutube.textContent + numToAddYoutube;
+// increase the bottle's height (2700/100)
 
-  start++;
-};
-
-const interval = setInterval(increaseCount, 1);
+// increase the percentage (10%) and amount left (1.5L)
