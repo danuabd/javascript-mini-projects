@@ -10,6 +10,17 @@
   margin-bottom: 2rem;
 }
 
+.project-intro {
+  padding-top: 4.4rem;
+  padding-bottom: 4.4rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-3);
+}
+
+.project-intro .p {
+  margin-bottom: 0;
+}
+
 .section--side-bar {
   min-height: 100vh;
 }
