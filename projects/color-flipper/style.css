@@ -1,8 +1,8 @@
-main {
-  height: 100vh;
+.section--color-flipper {
   display: flex;
   align-items: center;
   font-family: sans-serif;
+  height: 50vh;
 }
 
 .color-flipper {
