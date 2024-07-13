@@ -1,181 +1,87 @@
-main {
-  min-height: 100vh;
-}
-
-.intro {
-  padding-top: 6.4rem;
-  padding-bottom: 6.4rem;
-  color: var(--clr-light);
-  background-color: var(--clr-dark-3);
-}
-
-.intro h2 {
+.water-reminder__heading {
   max-width: max-content;
-  color: var(--clr-dark-2);
-  background-color: var(--clr-yellow);
+  color: var(--clr-light);
+  background-color: #2563eb;
+  border-radius: var(--border-radius-m);
+  padding: 1.6rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem 2rem;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-  .intro {
-    padding-top: 4.4rem;
-    padding-bottom: 5.6rem;
-  }
+.water-reminder__bottle--cover {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  border: 4px solid #2563eb;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  overflow: hidden;
 }
 
-@media (max-width: 425px) {
-  .intro {
-    padding-top: 4.4rem;
-    padding-bottom: 4.4rem;
-  }
-
-  .intro h2 {
-    margin-bottom: 2.4rem;
-  }
-}
-
-.social-counter {
+.water-reminder__bottle--fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.4rem;
-}
-
-.social-counter__box {
-  width: 220px;
-  height: 225px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
-  border-radius: var(--border-radius-m);
-  padding-top: 2.4rem;
-  padding-bottom: 2.4rem;
-  cursor: pointer;
-  transition: box-shadow 300ms;
+  background-color: #3b82f6;
+  transition: height 300ms;
 }
 
-.facebook {
-  background-color: #0866ff;
-  box-shadow: 0 10px 0 0 #0652cc;
+.water-reminder__percentage {
+  text-align: center;
+  font-size: 4.4rem;
+  font-weight: 600;
+  color: var(--clr-light);
 }
 
-.instagram {
-  background-color: #e1306c;
-  box-shadow: 0 10px 0 0 #b42656;
-}
-
-.youtube {
-  background-color: #ff0000;
-  box-shadow: 0 10px 0 0 #cc0000;
-}
-
-.counter__icon {
-  width: 5.2rem;
-  height: 5.2rem;
-  fill: #fff;
-}
-
-.counter__box {
+.water-reminder__consumed-amount {
+  position: absolute;
+  top: 1.2rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 6px;
-}
-
-.counter__count {
   font-size: 3.6rem;
   font-weight: 600;
-  color: #fff;
+  color: #2563eb;
 }
 
-.counter__name {
-  font-size: 1.6rem;
-  color: #fff;
-  text-transform: capitalize;
+.water-reminder__cups {
+  max-width: max-content;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 4.4rem;
+  column-gap: 3.6rem;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 680px) {
-  .social-counter__box {
-    width: 200px;
-    height: 205px;
-  }
-
-  .counter__icon {
-    width: 4.8rem;
-    height: 4.8rem;
-  }
-
-  .counter__count {
-    font-size: 3.2rem;
-  }
+.water-reminder__cup {
+  position: relative;
+  width: 6rem;
+  height: 12rem;
+  border: 3px solid #2563eb;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-@media (max-width: 624px) {
-  .social-counter__box {
-    width: 180px;
-    height: 185px;
-  }
-
-  .counter__icon {
-    width: 4.4rem;
-    height: 4.4rem;
-  }
-
-  .counter__count {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 560px) {
-  .social-counter__box {
-    width: 160px;
-    height: 174px;
-    gap: 3.6rem;
-  }
-
-  .counter__icon {
-    width: 4.4rem;
-    height: 4.4rem;
-  }
-
-  .counter__count {
-    font-size: 2.6rem;
-  }
-}
-
-@media (max-width: 496px) {
-  .social-counter {
-    gap: 1.8rem;
-  }
-  .social-counter__box {
-    width: 140px;
-    height: 150px;
-    gap: 3.2rem;
-    padding: 0;
-  }
-
-  .counter__icon {
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-
-  .counter__count {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 446px) {
-  .social-counter {
-    gap: 2.4rem;
-    flex-wrap: wrap;
-  }
+.water-reminder__cup::after {
+  content: "250 ml";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--clr-light);
+  background-color: #3b82f6;
 }
