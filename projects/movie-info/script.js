@@ -63,7 +63,7 @@ const options = {
 const getMovies = async function () {
   try {
     const res = await fetch(
-      "https:api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity",
+      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity",
       options
     );
 
