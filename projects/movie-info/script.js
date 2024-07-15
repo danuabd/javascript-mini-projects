@@ -74,7 +74,7 @@ const getMovies = async function () {
     createMovieCards(movieData);
     movieCardsArr = [...movieCards];
   } catch (err) {
-    console.error(err.message);
+    console.error(err);
   }
 };
 
